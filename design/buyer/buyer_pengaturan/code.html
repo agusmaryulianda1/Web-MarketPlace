@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MarketPlace - Pengaturan Akun</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#ffb690",
+            "on-tertiary-fixed-variant": "#38485d",
+            "surface-container": "#eceef0",
+            "tertiary-fixed": "#d3e4fe",
+            "outline-variant": "#e0c0b1",
+            "surface-tint": "#9d4300",
+            "on-secondary-container": "#5c647a",
+            "background": "#f7f9fb",
+            "on-surface-variant": "#584237",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e0e3e5",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#341100",
+            "surface-container-low": "#f2f4f6",
+            "surface-variant": "#e0e3e5",
+            "surface-container-high": "#e6e8ea",
+            "tertiary-container": "#8c9cb4",
+            "inverse-on-surface": "#eff1f3",
+            "on-tertiary-container": "#243348",
+            "inverse-primary": "#ffb690",
+            "on-tertiary-fixed": "#0b1c30",
+            "surface-bright": "#f7f9fb",
+            "outline": "#8c7164",
+            "inverse-surface": "#2d3133",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d8dadc",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-secondary-fixed": "#131b2e",
+            "primary-fixed": "#ffdbca",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "secondary-fixed-dim": "#bec6e0",
+            "tertiary": "#505f76",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "primary": "#9d4300",
+            "on-primary-fixed-variant": "#783200",
+            "surface": "#f7f9fb",
+            "secondary": "#565e74",
+            "primary-container": "#f97316",
+            "secondary-container": "#dae2fd",
+            "on-background": "#191c1e",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#582200"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "3rem",
+            "space-xl": "2.5rem",
+            "margin": "1.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "margin-sm": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Shared Component: TopNavBar -->
+<header class="bg-surface-container-lowest docked full-width top-0 sticky z-40 border-b border-surface-container-highest shadow-sm">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg w-full flex items-center justify-between h-20 gap-space-md">
+<!-- Left: Brand Logo & Search Bar -->
+<div class="flex items-center gap-6 lg:gap-8 flex-1">
+<a class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight flex items-center gap-2 flex-shrink-0" href="#">
+<span class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-extrabold text-xl shadow-sm">M</span>
+<span class="">MarketPlace</span>
+</a>
+<!-- Global Search Bar with Facet Dropdown -->
+<div class="hidden sm:flex items-center flex-1 max-w-lg border border-surface-container-highest rounded-lg bg-surface-container-lowest focus-within:border-primary-container focus-within:ring-1 focus-within:ring-primary-container transition-all">
+<div class="px-3 py-2 flex items-center gap-1 border-r border-surface-container-highest text-secondary text-label-md font-label-md cursor-pointer hover:text-on-surface select-none">
+<span class="">Semua</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<div class="flex items-center flex-1 px-3 py-2 gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none p-0 text-body-sm font-body-sm text-on-surface focus:ring-0 focus:outline-none placeholder:text-secondary" placeholder="Cari barang, brand, atau vendor..." type="text">
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-secondary hover:text-on-surface transition-colors text-label-lg font-label-lg" href="#">Katalog</a>
+<a class="text-secondary hover:text-on-surface transition-colors text-label-lg font-label-lg" href="#">Toko Vendor</a>
+<a class="text-secondary hover:text-on-surface transition-colors text-label-lg font-label-lg" href="#">Promo</a>
+<a class="text-secondary hover:text-on-surface transition-colors text-label-lg font-label-lg" href="#">Bantuan</a>
+</nav>
+<!-- Trailing Action Badges & Avatar Profile -->
+<div class="flex items-center gap-4 flex-shrink-0">
+<!-- Cart Action with badge -->
+<a class="relative p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#" title="Keranjang Belanja">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary-container text-on-primary text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">3</span>
+</a>
+<!-- Notifications Action -->
+<a class="relative p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#" title="Notifikasi">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary-container rounded-full ring-2 ring-surface-container-lowest"></span>
+</a>
+<div class="h-6 w-px bg-surface-container-highest mx-1 hidden sm:block"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center gap-3 pl-1 pr-2 py-1 rounded-full border border-surface-container-highest bg-surface-container-low cursor-pointer hover:border-outline-variant transition-all">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close up photographic studio portrait of a professional Southeast Asian male named Budi Santoso with a warm confident smile, neatly styled black hair, wearing a casual slate blue collared shirt. Soft directional studio light against a pristine neutral background adhering to modern light-mode marketplace standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwafy82BRoiyHBf3ktx5WMrJt3cSqU0AKkWoCse0maeYzKKiTdBRZCMJsUFM0LRrsghoUcbjTbP_5FhlDkYBLXXwuK8BSDuSLsVtM8PpbDz-bfnLx3ebmi1FWyx4PBmmE78lXuBirT5yoT3PCijl8z8SYPoleQX5YNKfDgDm5S2kTbVbkbD27CkxcSmiyFpYkOJD0SpufJox0ONfa-rfesRp9LD1aoDULHwJ_ZwZq-c0dEeJLC5ltO">
+</div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">Budi Santoso</span>
+<span class="text-[10px] leading-tight text-primary font-bold">Pembeli Platinum</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm hidden lg:inline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Viewport Canvas -->
+<main class="flex-1 max-w-7xl mx-auto px-margin md:px-margin-lg py-8 w-full">
+<!-- Breadcrumbs Section -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-label-md font-label-md text-secondary mb-6">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base" data-icon="home">home</span>
+<span class="">Beranda</span>
+</a>
+<span class="material-symbols-outlined text-sm text-surface-container-highest" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Akun Saya</a>
+<span class="material-symbols-outlined text-sm text-surface-container-highest" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-semibold">Pengaturan Akun</span>
+</nav>
+<!-- Page Headline & Subtitle -->
+<div class="mb-8 border-b border-surface-container-highest pb-4">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Pengaturan Akun &amp; Keamanan</h1>
+<p class="font-body-md text-body-md text-secondary mt-1">Kelola data identitas, preferensi privasi, alamat pengiriman, dan keamanan login akun Anda.</p>
+</div>
+<!-- 2-Column Responsive Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Navigation Sidebar & Profile Summary (4 Cols on lg) -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<!-- User Mini Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-6 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container p-0.5">
+<img class="w-full h-full rounded-full object-cover" data-alt="High quality professional headshot of Indonesian man Budi Santoso smiling gently, bright editorial lighting, clear facial features, warm neutral studio background, pristine clarity compatible with clean marketplace aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhyTibDTuNt2BeHy_-P-03DnpzZzGgXcoo-_e033gJK4dNTdSpF5-WnS22to41hHpS2BNXS6drr9V9iMppv1phOdP-gFjxu0XYAVDp5t2qnMUpVK3JWWYKZHJ_ltpK6cjoK5pLyq4uZQ8iiDwHm6R-kRQe6sLOtbFoTRqfW_4qIm5NCSgJhIjThaPQDjWWfoteXwCZuUT6qM-Vn5mhtsMoBsBaS8EmWjWo2-uRS4O_vq6TXLZgV7od">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Budi Santoso</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate mb-2">budi.santoso@email.com</p>
+<!-- Verification Pill / Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-low border border-surface-container-highest text-label-sm font-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="stars" data-weight="fill">stars</span>
+<span class="text-primary font-bold">Pembeli Platinum</span>
+</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-highest flex items-center justify-between text-label-sm font-label-sm text-secondary">
+<span class="">Bergabung sejak Maret 2022</span>
+<span class="text-primary font-medium flex items-center gap-0.5 cursor-pointer hover:underline">
+<span class="">Keuntungan Member</span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Vertical Menu Navigation Items -->
+<nav class="bg-surface-container-lowest rounded-xl border border-surface-container-highest overflow-hidden shadow-sm flex flex-col divide-y divide-surface-container-highest"><a class="flex items-center justify-between px-5 py-3.5 bg-primary-fixed text-on-primary-fixed border-l-4 border-primary font-semibold transition-all" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl text-primary" data-icon="manage_accounts">manage_accounts</span><span class="text-label-lg font-label-lg text-primary">Pengaturan Akun</span></div><span class="material-symbols-outlined text-lg text-primary" data-icon="chevron_right">chevron_right</span></a><a class="flex items-center justify-between px-5 py-3.5 text-secondary hover:bg-surface-container-low hover:text-on-surface transition-all" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl text-secondary" data-icon="receipt_long">receipt_long</span><span class="text-label-lg font-label-lg">Riwayat Pesanan</span></div><span class="material-symbols-outlined text-lg text-secondary" data-icon="chevron_right">chevron_right</span></a></nav>
+<!-- Help & Verification Promo Box -->
+
+</aside>
+<!-- Right Column: Main Settings Content Panel (8 Cols on lg) -->
+<section class="lg:col-span-8 flex flex-col gap-8">
+<!-- CARD 1: Informasi Profil Dasar -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-6 md:p-8 shadow-sm"><div class="flex items-center justify-between border-b border-surface-container-highest pb-4 mb-6"><div><h2 class="font-headline-sm text-headline-sm text-on-surface">Informasi Profil Dasar</h2><p class="font-body-sm text-body-sm text-secondary mt-0.5">Data identitas utama untuk transaksi Anda.</p></div><span class="material-symbols-outlined text-secondary text-2xl" data-icon="badge">badge</span></div><form class="space-y-5" onsubmit="event.preventDefault();"><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><div><label class="block text-label-md font-label-md text-on-surface mb-2 font-semibold" for="fullName">Nama Lengkap</label><input class="w-full px-3.5 py-2.5 rounded-lg border border-surface-container-highest bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="fullName" type="text" value="Budi Santoso"></div><div><label class="block text-label-md font-label-md text-on-surface mb-2 font-semibold" for="email">Email</label><div class="relative"><input class="w-full px-3.5 py-2.5 rounded-lg border border-surface-container-highest bg-surface-container-low text-body-md font-body-md text-on-surface focus:outline-none cursor-not-allowed" id="email" readonly="" type="email" value="budi.santoso@email.com"></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><div><label class="block text-label-md font-label-md text-on-surface mb-2 font-semibold" for="phone">Nomor Ponsel</label><input class="w-full px-3.5 py-2.5 rounded-lg border border-surface-container-highest bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="phone" type="tel" value="+62 812-8877-2211"></div><div><label class="block text-label-md font-label-md text-on-surface mb-2 font-semibold" for="username">Username</label><input class="w-full px-3.5 py-2.5 rounded-lg border border-surface-container-highest bg-surface-container-low text-body-md font-body-md text-on-surface focus:outline-none cursor-not-allowed" id="username" readonly="" type="text" value="@budisantoso99"></div></div><div class="flex justify-end pt-2"><button class="px-6 py-2.5 rounded-lg bg-primary-container hover:bg-surface-tint text-on-primary font-label-lg text-label-lg font-semibold transition-all duration-150 shadow-sm active:scale-95 flex items-center gap-2" type="submit"><span class="material-symbols-outlined text-base" data-icon="save">save</span><span class="">Simpan Profil</span></button></div></form></article>
+<!-- CARD 2: Daftar Alamat Pengiriman Utama -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-6 md:p-8 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-container-highest pb-4 mb-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daftar Alamat Pengiriman Utama</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Alamat tujuan pengiriman default untuk checkout kilat.</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-surface-container-highest hover:border-primary text-secondary hover:text-primary transition-all text-label-md font-label-md self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+<span class="">+ Tambah Alamat Baru</span>
+</button>
+</div>
+<!-- Address Highlight Card -->
+<div class="p-5 rounded-xl border-2 border-primary-fixed bg-surface-container-low relative flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary text-[11px] font-bold tracking-wide uppercase">Utama</span>
+<span class="font-headline-sm text-sm md:text-headline-sm text-on-surface font-semibold">Rumah - Budi Santoso</span>
+<span class="text-body-sm font-body-sm text-secondary">(+62 812-8877-2211)</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed max-w-xl">
+                Jl. Kebayoran Baru No. 45, RT.04/RW.02, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12140
+              </p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-secondary">
+<span class="material-symbols-outlined text-base text-primary" data-icon="pin_drop">pin_drop</span>
+<span class="">Titik Pin Peta Sudah Akurat</span>
+</div>
+</div>
+<!-- Action Trigger -->
+<div class="flex items-center gap-3 self-end md:self-center flex-shrink-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-surface-container-highest hover:border-primary-container text-on-surface hover:text-primary font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="edit">edit</span>
+<span class="">Ubah Alamat</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 3: Keamanan Akun & Kata Sandi -->
+<article class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-6 md:p-8 shadow-sm"><div class="flex items-center justify-between border-b border-surface-container-highest pb-4 mb-6"><div><h2 class="font-headline-sm text-headline-sm text-on-surface">Keamanan &amp; Kata Sandi</h2><p class="font-body-sm text-body-sm text-secondary mt-0.5">Ganti kata sandi secara berkala untuk menjaga keamanan akun Anda.</p></div><span class="material-symbols-outlined text-secondary text-2xl" data-icon="lock">lock</span></div><form class="space-y-4" onsubmit="event.preventDefault();"><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label class="block text-label-sm font-label-sm text-secondary mb-1.5" for="oldPass">Kata Sandi Lama</label><input class="w-full px-3.5 py-2 rounded-lg border border-surface-container-highest text-body-sm font-body-sm focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="oldPass" placeholder="••••••••••••" type="password"></div><div><label class="block text-label-sm font-label-sm text-secondary mb-1.5" for="newPass">Kata Sandi Baru</label><input class="w-full px-3.5 py-2 rounded-lg border border-surface-container-highest text-body-sm font-body-sm focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="newPass" placeholder="Minimal 8 karakter" type="password"></div></div><div class="flex justify-end pt-2"><button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-surface-tint text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm" type="submit">Perbarui Kata Sandi</button></div></form></article>
+<!-- CARD 4: Preferensi Notifikasi -->
+
+</section>
+</div>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="bg-surface-container-lowest full-width border-t border-surface-container-highest mt-16">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg py-12 w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+<div class="space-y-3 md:col-span-2">
+<div class="text-headline-md font-headline-md font-bold text-on-surface flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-extrabold text-lg">M</span>
+<span class="">MarketPlace</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary max-w-sm">
+            Platform Multi-Vendor Terpercaya yang menghubungkan ribuan penjual resmi terverifikasi dengan pembeli di seluruh penjuru Indonesia.
+          </p>
+</div>
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Layanan Pelanggan</h4>
+<ul class="space-y-2 text-body-sm font-body-sm text-secondary">
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Pusat Bantuan</a></li>
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Kontak Layanan Pelanggan</a></li>
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Panduan Transaksi Aman</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Legal &amp; Kemitraan</h4>
+<ul class="space-y-2 text-body-sm font-body-sm text-secondary">
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Tentang Kami</a></li>
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Daftar Jadi Vendor</a></li>
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Kebijakan Privasi</a></li>
+<li class=""><a class="hover:text-primary transition-colors duration-150" href="#">Syarat &amp; Ketentuan</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm font-body-sm text-secondary">
+<p class="">© 2025 MarketPlace Inc. Hak Cipta Dilindungi. Platform Multi-Vendor Terpercaya.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a>
+<a class="hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+</body></html>

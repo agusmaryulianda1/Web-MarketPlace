@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Portal - Pengawasan Pesanan</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-highest": "#e0e3e5",
+            "on-surface": "#191c1e",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#582200",
+            "surface-container-high": "#e6e8ea",
+            "secondary-container": "#dae2fd",
+            "surface": "#f7f9fb",
+            "outline-variant": "#e0c0b1",
+            "background": "#f7f9fb",
+            "secondary-fixed-dim": "#bec6e0",
+            "primary": "#9d4300",
+            "primary-fixed": "#ffdbca",
+            "outline": "#8c7164",
+            "surface-container-low": "#f2f4f6",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#ffb690",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary": "#505f76",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#38485d",
+            "surface-container": "#eceef0",
+            "surface-bright": "#f7f9fb",
+            "primary-container": "#f97316",
+            "secondary": "#565e74",
+            "tertiary-container": "#8c9cb4",
+            "on-tertiary-fixed": "#0b1c30",
+            "on-background": "#191c1e",
+            "on-primary-fixed-variant": "#783200",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#dae2fd",
+            "on-secondary-container": "#5c647a",
+            "error": "#ba1a1a",
+            "surface-tint": "#9d4300",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#243348",
+            "tertiary-fixed": "#d3e4fe",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2d3133",
+            "on-primary-fixed": "#341100",
+            "inverse-on-surface": "#eff1f3",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "on-surface-variant": "#584237",
+            "surface-dim": "#d8dadc",
+            "inverse-primary": "#ffb690"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-sm": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter-lg": "2rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "3rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- Side Navigation Bar (Shared Component Anchor) -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 z-40 bg-surface-container-lowest border-r border-surface-variant shadow-sm">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Brand & Profile Header -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="storefront">storefront</span>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight truncate">MarketPlace Portal</h1>
+<p class="font-body-sm text-body-sm text-secondary truncate">Seller &amp; Admin Central</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="space-y-1">
+<!-- Dashboard Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<!-- Produk Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-lg text-label-lg">Produk</span>
+</a>
+<!-- Pesanan Tab (ACTIVE according to page context: Orders/Pesanan) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container/10 text-primary font-label-lg text-label-lg font-semibold border-r-2 border-primary active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="flex-1">Pesanan</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold">4</span>
+</a>
+<!-- Toko Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-lg text-label-lg">Toko</span>
+</a>
+<!-- Pengaturan Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Pengaturan</span>
+</a>
+</nav>
+</div>
+<!-- Quick Action CTA & Footer Links -->
+<div class="space-y-4 pt-4 border-t border-surface-variant">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Buka Toko</span>
+</button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Bantuan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-error hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas Wrapper (Pushed right by sidebar) -->
+<div class="pl-72 flex-1 flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="docked full-width top sticky top-0 z-30 bg-surface-container-lowest border-b border-surface-variant shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<!-- Search bar on left with Facet & Breadcrumbs -->
+<div class="flex items-center gap-6 flex-1 max-w-2xl">
+<div class="hidden lg:flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span>Admin Portal</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">Pengawasan Pesanan</span>
+</div>
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-surface-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Cari Order ID, nama buyer, vendor, atau nomor resi..." type="text"/>
+</div>
+</div>
+<!-- Trailing System Status & Admin Profile -->
+<div class="flex items-center gap-4">
+<!-- System Normal Badge -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Sistem Normal</span>
+</div>
+<!-- Icon actions -->
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary-container rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Settings / Tune">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<!-- Divider -->
+<div class="h-6 w-px bg-surface-variant"></div>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-1">
+<div class="w-9 h-9 rounded-full bg-surface-container-high border border-surface-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of an Indonesian platform administrator wearing formal technical attire in a softly lit, modern light-mode office setting with slate neutral tones and architectural highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW3WUI6vDjD9TB_GreGYI1rhJ-6BU_bwN4RPJgMlAtA0Sf2Eg_hBplfL5HpYrcrfxfLAFbsBCScoD2aC5jmxDFQesZHNf-O9IkD_70HZVjrKjUKKFFNuM90YPho1D5_yfvz-ZXPFmomzkeEYe-2ARCvlzPWw86GVodDzkLE0d80_GAaHwwICoj3v6dzeqz_pjgondF3tv7tGs0FV0DF6iqAMbN2KfhFxGc76PHbb7dqr0HIKu4ad4R"/>
+</div>
+<div class="hidden md:block text-left">
+<p class="font-label-lg text-label-lg font-semibold text-on-surface leading-tight">Admin Utama</p>
+<p class="font-label-sm text-label-sm text-secondary">Super Administrator</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Workspace -->
+<main class="p-6 md:p-8 space-y-6 max-w-[1440px] mx-auto w-full">
+<!-- Main Content Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-surface-variant">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Pengawasan Transaksi &amp; Pesanan</h2>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-3xl">
+            Monitoring seluruh transaksi escrow multi-vendor, status pembayaran, pengiriman lintas kurir, dan penyelesaian sengketa.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 bg-surface-container-lowest border border-surface-variant rounded-lg font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low hover:border-outline transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-primary-container" data-icon="file_download">file_download</span>
+<span>Unduh Laporan Transaksi (.XLSX)</span>
+</button>
+</div>
+</div>
+<!-- Bento-style Key Metrics Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1: Total Transaksi -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm hover:border-outline-variant transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Total Transaksi Bulan Ini</span>
+<div class="p-2 rounded-lg bg-secondary-container/30 text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">28.940 <span class="font-body-sm text-body-sm font-normal text-secondary">Pesanan</span></div>
+<p class="font-label-md text-label-md text-primary font-semibold mt-1">Rp 1,42 Miliar</p>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-variant flex items-center gap-1.5 text-emerald-600 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span>+14.2% dari bulan lalu</span>
+</div>
+</div>
+<!-- Metric 2: Escrow Sedang Berjalan -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm hover:border-outline-variant transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Escrow Sedang Berjalan</span>
+<div class="p-2 rounded-lg bg-primary-container/10 text-primary">
+<span class="material-symbols-outlined" data-icon="lock_clock">lock_clock</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Rp 148.500.000</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Dana ditahan sistem sampai pesanan diterima</p>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-variant flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Rerata Kliring</span>
+<span class="font-semibold text-on-surface">48 Jam</span>
+</div>
+</div>
+<!-- Metric 3: Pesanan Bermasalah -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm hover:border-outline-variant transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Pesanan Bermasalah / Komplain</span>
+<div class="p-2 rounded-lg bg-error-container text-error">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="font-headline-md text-headline-md font-bold text-error">4 <span class="font-body-sm text-body-sm font-normal text-secondary">Pesanan</span></div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Memerlukan intervensi mediasi admin</p>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-variant flex items-center gap-1.5 text-error font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="priority_high">priority_high</span>
+<span>2 Tiket butuh respon hari ini</span>
+</div>
+</div>
+<!-- Metric 4: Sukses Rate -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm hover:border-outline-variant transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Sukses Rate Transaksi</span>
+<div class="p-2 rounded-lg bg-emerald-50 text-emerald-600">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">99.8%</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Penyelesaian transaksi sukses tanpa retur</p>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-variant flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Toleransi Kegagalan</span>
+<span class="text-emerald-600 font-semibold">&lt; 0.5% Target</span>
+</div>
+</div>
+</section>
+<!-- Control Panel: Filter Tabs & Filter Bar -->
+<div class="space-y-4">
+<!-- Status Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 border-b border-surface-variant scrollbar-none">
+<button class="px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm">
+            Semua Pesanan (28.940)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">
+            Menunggu Pembayaran (450)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">
+            Sedang Diproses Toko (1.210)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">
+            Dalam Pengiriman (2.890)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">
+            Selesai (24.200)
+          </button>
+<button class="px-4 py-2 rounded-full bg-error-container text-error border border-error/20 font-label-md text-label-md whitespace-nowrap flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+            Kendala / Sengketa (4)
+          </button>
+</div>
+<!-- Filter Bar -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Date Range Picker -->
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low border border-surface-variant rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-medium">Bulan Ini (Okt 2024)</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<!-- Courier Dropdown -->
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low border border-surface-variant rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="local_shipping">local_shipping</span>
+<span>Semua Kurir</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<!-- Payment Method Filter -->
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low border border-surface-variant rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Metode: Semua</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Active Filter Counter & Reset -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary">Menampilkan 5 data per halaman</span>
+<button class="p-2 rounded-lg border border-surface-variant text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Muat ulang tabel">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Structured Orders Monitoring Table Card -->
+<div class="rounded-xl bg-surface-container-lowest border border-surface-variant shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-variant bg-surface-container-low font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold">Order ID</th>
+<th class="py-3.5 px-4 font-semibold">Waktu Transaksi</th>
+<th class="py-3.5 px-4 font-semibold">Pembeli (Buyer)</th>
+<th class="py-3.5 px-4 font-semibold">Toko Vendor (Merchant)</th>
+<th class="py-3.5 px-4 font-semibold">Total &amp; Pembayaran</th>
+<th class="py-3.5 px-4 font-semibold">Kurir &amp; Resi</th>
+<th class="py-3.5 px-4 font-semibold">Status Pesanan</th>
+<th class="py-3.5 px-4 font-semibold text-right">Aksi Admin</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-sm text-body-sm">
+<!-- Row 1: ORD-9942 (Selesai) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4 font-semibold font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-primary hover:underline cursor-pointer">#ORD-9942</span>
+<button class="text-secondary hover:text-on-surface" title="Salin ID">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<div>24 Okt 2024</div>
+<div class="font-label-sm text-label-sm text-secondary/80">13:45 WIB</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-xs text-on-secondary-fixed">BS</div>
+<span>Budi Santoso</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">AudioTech Official Store</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[13px] text-emerald-600" data-icon="verified">verified</span>
+<span>Merchant Terverifikasi</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-semibold text-on-surface">Rp 1.899.000</div>
+<div class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm mt-0.5">BCA VA</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">JNE Reguler</div>
+<div class="font-label-sm text-label-sm text-secondary font-mono">JNE982104</div>
+</td>
+<td class="py-4 px-4">
+<!-- Selesai Badge [Hijau] -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    Selesai
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="px-3 py-1.5 rounded-lg border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+                    Audit &amp; Rincian
+                  </button>
+</td>
+</tr>
+<!-- Row 2: ORD-9941 (Diproses) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4 font-semibold font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-primary hover:underline cursor-pointer">#ORD-9941</span>
+<button class="text-secondary hover:text-on-surface" title="Salin ID">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<div>24 Okt 2024</div>
+<div class="font-label-sm text-label-sm text-secondary/80">12:10 WIB</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-xs text-on-secondary-fixed">SR</div>
+<span>Siti Rahma</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Urban Threads Store</div>
+<div class="font-label-sm text-label-sm text-secondary">Vendor Regular</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-semibold text-on-surface">Rp 320.000</div>
+<div class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm mt-0.5">QRIS</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">SiCepat REG</div>
+<div class="font-label-sm text-label-sm text-secondary font-mono">SCP772190</div>
+</td>
+<td class="py-4 px-4">
+<!-- Diproses Badge [Kuning] -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                    Diproses
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="px-3 py-1.5 rounded-lg border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+                    Detail
+                  </button>
+</td>
+</tr>
+<!-- Row 3: ORD-9940 (Menunggu Bayar) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4 font-semibold font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-primary hover:underline cursor-pointer">#ORD-9940</span>
+<button class="text-secondary hover:text-on-surface" title="Salin ID">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<div>24 Okt 2024</div>
+<div class="font-label-sm text-label-sm text-secondary/80">10:30 WIB</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-xs text-on-secondary-fixed">DA</div>
+<span>Dimas Arya</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Chronos Digital Lab</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[13px] text-emerald-600" data-icon="verified">verified</span>
+<span>Merchant Terverifikasi</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-semibold text-on-surface">Rp 2.890.000</div>
+<div class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm mt-0.5">Mandiri VA</div>
+</td>
+<td class="py-4 px-4 text-secondary italic font-body-sm text-body-sm">
+                  Menunggu Pembayaran
+                </td>
+<td class="py-4 px-4">
+<!-- Menunggu Pembayaran Badge [Oranye] -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-50 text-orange-800 font-label-sm text-label-sm font-semibold border border-orange-200">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                    Menunggu Bayar
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="px-3 py-1.5 rounded-lg border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+                    Detail
+                  </button>
+</td>
+</tr>
+<!-- Row 4: ORD-9938 (Dikirim) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4 font-semibold font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-primary hover:underline cursor-pointer">#ORD-9938</span>
+<button class="text-secondary hover:text-on-surface" title="Salin ID">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<div>23 Okt 2024</div>
+<div class="font-label-sm text-label-sm text-secondary/80">18:22 WIB</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-xs text-on-secondary-fixed">RS</div>
+<span>Ratna Sari</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Brew Craft Indonesia</div>
+<div class="font-label-sm text-label-sm text-secondary">Vendor Regular</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-semibold text-on-surface">Rp 540.000</div>
+<div class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm mt-0.5">GoPay</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">J&amp;T Express</div>
+<div class="font-label-sm text-label-sm text-secondary font-mono">JT441029</div>
+</td>
+<td class="py-4 px-4">
+<!-- Dikirim Badge [Biru] -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 font-label-sm text-label-sm font-semibold border border-sky-200">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
+                    Dikirim
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="px-3 py-1.5 rounded-lg border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+                    Lacak &amp; Detail
+                  </button>
+</td>
+</tr>
+<!-- Row 5: ORD-9935 (Sengketa / Investigasi) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<td class="py-4 px-4 font-semibold font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-2">
+<span class="text-error hover:underline cursor-pointer">#ORD-9935</span>
+<button class="text-secondary hover:text-on-surface" title="Salin ID">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<div>23 Okt 2024</div>
+<div class="font-label-sm text-label-sm text-secondary/80">15:10 WIB</div>
+</td>
+<td class="py-4 px-4 font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center font-bold text-xs text-error">KP</div>
+<span>Kevin Pratama</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Natura Derma Botanicals</div>
+<div class="font-label-sm text-label-sm text-secondary">Vendor Regular</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-semibold text-on-surface">Rp 189.000</div>
+<div class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm mt-0.5">BCA VA</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface">Anteraja</div>
+<div class="font-label-sm text-label-sm text-secondary font-mono">ANT339102</div>
+</td>
+<td class="py-4 px-4">
+<!-- Sengketa Badge [Merah] -->
+<div class="space-y-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+                      Mediasi Sengketa
+                    </span>
+<p class="font-label-sm text-label-sm text-error font-medium">Barang rusak saat tiba</p>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold hover:bg-on-error-container transition-colors shadow-sm active:scale-95">
+                    Buka Tiket Mediasi
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-4 bg-surface-container-lowest">
+<div class="font-body-sm text-body-sm text-secondary">
+            Menampilkan <span class="font-semibold text-on-surface">1 - 5</span> dari <span class="font-semibold text-on-surface">28.940</span> pesanan
+          </div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg border border-surface-variant text-secondary disabled:opacity-40 hover:bg-surface-container-low transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center">
+              1
+            </button>
+<button class="w-8 h-8 rounded-lg border border-surface-variant text-secondary hover:bg-surface-container-low font-label-md text-label-md flex items-center justify-center transition-colors">
+              2
+            </button>
+<button class="w-8 h-8 rounded-lg border border-surface-variant text-secondary hover:bg-surface-container-low font-label-md text-label-md flex items-center justify-center transition-colors">
+              3
+            </button>
+<span class="px-2 text-secondary">...</span>
+<button class="w-8 h-8 rounded-lg border border-surface-variant text-secondary hover:bg-surface-container-low font-label-md text-label-md flex items-center justify-center transition-colors">
+              5788
+            </button>
+<button class="p-2 rounded-lg border border-surface-variant text-secondary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

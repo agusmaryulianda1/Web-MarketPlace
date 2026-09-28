@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Katalog Produk | MarketPlace Multi-Vendor</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f2f4f6",
+            "on-error": "#ffffff",
+            "primary": "#9d4300",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-error-container": "#93000a",
+            "surface-tint": "#9d4300",
+            "inverse-on-surface": "#eff1f3",
+            "secondary": "#565e74",
+            "tertiary": "#505f76",
+            "on-tertiary-container": "#243348",
+            "tertiary-container": "#8c9cb4",
+            "on-surface": "#191c1e",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#d8dadc",
+            "background": "#f7f9fb",
+            "surface": "#f7f9fb",
+            "tertiary-fixed": "#d3e4fe",
+            "primary-fixed-dim": "#ffb690",
+            "secondary-fixed": "#dae2fd",
+            "on-primary-fixed-variant": "#783200",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "on-primary-container": "#582200",
+            "inverse-primary": "#ffb690",
+            "surface-bright": "#f7f9fb",
+            "primary-container": "#f97316",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "outline": "#8c7164",
+            "outline-variant": "#e0c0b1",
+            "on-background": "#191c1e",
+            "on-primary-fixed": "#341100",
+            "secondary-container": "#dae2fd",
+            "surface-variant": "#e0e3e5",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#584237",
+            "inverse-surface": "#2d3133",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed": "#ffdbca",
+            "on-tertiary-fixed-variant": "#38485d",
+            "surface-container": "#eceef0",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary-fixed": "#0b1c30"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-sm": "1rem",
+            "gutter-lg": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "margin-lg": "3rem",
+            "gutter-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-xl": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- TOP NAVBAR -->
+<header class="bg-surface-container-lowest docked full-width top-0 sticky z-40 border-b border-surface-container-highest shadow-sm">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg w-full flex items-center justify-between h-20 gap-4">
+<!-- Brand & Search Left Rail -->
+<div class="flex items-center gap-6 flex-1 max-w-2xl">
+<a class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight shrink-0 flex items-center gap-1.5" href="#">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm">M</span>
+<span>MarketPlace</span>
+</a>
+<!-- Search Bar with Integrated Category Dropdown -->
+<div class="relative w-full hidden sm:flex items-center border border-surface-container-highest rounded-lg bg-surface-container-lowest focus-within:border-primary-container focus-within:ring-1 focus-within:ring-primary-container transition-all">
+<div class="flex items-center pl-3 pr-2 py-2 text-secondary font-label-md text-label-md border-r border-surface-container-highest bg-surface-container-low/50 rounded-l-lg shrink-0">
+<span>Semua</span>
+<span class="material-symbols-outlined text-[16px] ml-1" data-icon="expand_more">expand_more</span>
+</div>
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined text-secondary ml-3 text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-transparent border-0 px-3 py-2 text-body-md font-body-md text-on-surface placeholder:text-secondary focus:ring-0 focus:outline-none" placeholder="Cari kebutuhan multi-vendor..." type="text" value="Headphone"/>
+<button class="p-1 mr-2 text-secondary hover:text-on-surface rounded-full" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Links (Katalog Active) -->
+<nav class="hidden lg:flex items-center gap-8 px-2 shrink-0">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-label-lg text-label-lg transition-all" href="#">Katalog</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Toko Vendor</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Promo</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Bantuan</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Icons Cart & Notifications -->
+<button aria-label="Keranjang Belanja" class="relative p-2.5 rounded-lg text-secondary hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-primary-container text-on-primary text-[10px] font-bold flex items-center justify-center">3</span>
+</button>
+<button aria-label="Notifikasi" class="relative p-2.5 rounded-lg text-secondary hover:bg-surface-container-low transition-colors duration-150 hidden sm:inline-flex" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<div class="h-6 w-px bg-surface-container-highest mx-1 hidden sm:block"></div>
+<!-- Auth / Profile Buttons -->
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 text-label-lg font-label-lg text-on-surface border border-surface-container-highest rounded-lg hover:bg-surface-container-low transition-colors" type="button">
+            Masuk
+          </button>
+<button class="px-4 py-2 text-label-lg font-label-lg text-on-primary bg-primary-container hover:bg-[#ea580c] rounded-lg transition-all duration-200 active:scale-95 shadow-sm" type="button">
+            Daftar
+          </button>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 max-w-7xl mx-auto px-margin md:px-margin-lg py-8 w-full">
+<!-- Breadcrumb & Header Section -->
+<div class="mb-8">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-body-sm font-body-sm text-secondary mb-3">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-medium">Katalog Produk</span>
+</nav>
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-surface-container-highest pb-4">
+<div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Semua Produk</h1>
+<p class="text-body-md font-body-md text-secondary mt-0.5">Hasil pencarian untuk "<span class="text-on-surface font-medium">Headphone</span>"</p>
+</div>
+<span class="text-label-md font-label-md text-secondary bg-surface-container px-3 py-1 rounded-full w-fit">
+          Menampilkan 128 hasil
+        </span>
+</div>
+</div>
+<!-- 2-Column Catalog Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: FILTER SIDEBAR -->
+<aside class="lg:col-span-3 bg-surface-container-lowest border border-surface-container-highest rounded-xl p-5 shadow-sm sticky top-28">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container-highest mb-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="tune">tune</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface text-[16px]">Filter Pencarian</h2>
+</div>
+<button class="text-label-sm font-label-sm text-primary hover:underline" type="button">
+            Reset Filter
+          </button>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- 1. Kategori Filter -->
+<div>
+<h3 class="text-label-lg font-label-lg text-on-surface mb-3 flex items-center justify-between">
+<span>Kategori</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="expand_less">expand_less</span>
+</h3>
+<div class="space-y-2.5">
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors flex-1">Elektronik</span>
+<span class="text-label-sm font-label-sm text-secondary">(84)</span>
+</label>
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors flex-1">Gadget</span>
+<span class="text-label-sm font-label-sm text-secondary">(28)</span>
+</label>
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors flex-1">Aksesoris</span>
+<span class="text-label-sm font-label-sm text-secondary">(12)</span>
+</label>
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors flex-1">Fashion</span>
+<span class="text-label-sm font-label-sm text-secondary">(4)</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-surface-container-highest"></div>
+<!-- 2. Rentang Harga Filter -->
+<div>
+<h3 class="text-label-lg font-label-lg text-on-surface mb-3">Rentang Harga</h3>
+<div class="space-y-2">
+<div class="relative flex items-center">
+<span class="absolute left-3 text-secondary text-label-sm font-label-sm">Rp</span>
+<input class="w-full pl-9 pr-3 py-2 text-body-sm font-body-sm border border-surface-container-highest rounded-lg focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Harga Minimum" type="text" value="150.000"/>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-secondary text-label-sm font-label-sm">Rp</span>
+<input class="w-full pl-9 pr-3 py-2 text-body-sm font-body-sm border border-surface-container-highest rounded-lg focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Harga Maksimum" type="text" value="3.500.000"/>
+</div>
+<button class="w-full mt-2 py-2 px-3 text-label-md font-label-md bg-surface-container-low hover:bg-surface-container-high border border-surface-container-highest text-on-surface rounded-lg transition-colors text-center" type="button">
+                Terapkan
+              </button>
+</div>
+</div>
+<div class="h-px bg-surface-container-highest"></div>
+<!-- 3. Rating Bintang Filter -->
+<div>
+<h3 class="text-label-lg font-label-lg text-on-surface mb-3">Rating Ulasan</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary-container border-surface-container-highest focus:ring-primary-container" name="rating-filter" type="radio"/>
+<div class="flex items-center text-primary-container gap-0.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-surface-container-highest" data-icon="star">star</span>
+</div>
+<span class="group-hover:text-primary transition-colors text-label-md font-label-md">4 ke atas</span>
+</label>
+<label class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface cursor-pointer group">
+<input class="w-4 h-4 text-primary-container border-surface-container-highest focus:ring-primary-container" name="rating-filter" type="radio"/>
+<div class="flex items-center text-primary-container gap-0.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-surface-container-highest" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[16px] text-surface-container-highest" data-icon="star">star</span>
+</div>
+<span class="group-hover:text-primary transition-colors text-label-md font-label-md">3 ke atas</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-surface-container-highest"></div>
+<!-- 4. Kondisi Filter -->
+<div>
+<h3 class="text-label-lg font-label-lg text-on-surface mb-3">Kondisi</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors">Baru</span>
+</label>
+<label class="flex items-center gap-3 text-body-md font-body-md text-on-surface cursor-pointer group">
+<input class="w-4 h-4 text-primary-container rounded border-surface-container-highest focus:ring-primary-container focus:ring-offset-0" type="checkbox"/>
+<span class="group-hover:text-primary transition-colors">Rekondisi</span>
+</label>
+</div>
+</div>
+</form>
+</aside>
+<!-- RIGHT COLUMN: PRODUCT CATALOG GRID -->
+<section class="lg:col-span-9 space-y-6">
+<!-- Sorting & Quick Filter Toolbar -->
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 shadow-sm">
+<!-- Quick Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md bg-on-surface text-surface-container-lowest shrink-0 transition-colors" type="button">
+              Semua
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-lowest border border-surface-container-highest text-on-surface hover:bg-surface-container-low shrink-0 transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Official Store</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-lowest border border-surface-container-highest text-on-surface hover:bg-surface-container-low shrink-0 transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" data-icon="local_offer">local_offer</span>
+<span>Diskon</span>
+</button>
+</div>
+<!-- Sort Select Menu -->
+<div class="flex items-center justify-end gap-2 shrink-0">
+<span class="text-label-md font-label-md text-secondary">Urutkan:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-surface-container-highest rounded-lg text-body-md font-body-md text-on-surface py-1.5 pl-3 pr-8 focus:border-primary-container focus:ring-1 focus:ring-primary-container cursor-pointer">
+<option selected="">Paling Sesuai</option>
+<option>Harga Terendah</option>
+<option>Harga Tertinggi</option>
+<option>Terbaru</option>
+</select>
+<span class="material-symbols-outlined text-secondary absolute right-2 top-2 pointer-events-none text-[18px]" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</div>
+<!-- Product Cards 3-Column Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A pair of sleek modern studio wireless headphones with silver matte finish and charcoal cushions on an architectural neutral stone podium. Soft directional studio daylight highlighting brushed aluminum detailing with warm minimal aesthetic. Ultra clean product photography with crisp shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx8dajsyyB0t-6GKE_ZL8_WoVaSOx_qAEeYoXHsNHhQTvjtnO8NpflvKFZYN7rg6lhoKL98RWr39cZyJL9BMDsuCnlETJDrxMiFSpIXNJZYO4wdrSgjSE4_VYND7r2bsgpDhhxQZomhPShj9tBf7lXrJySr61J4j5KqFjxYh1QPKkhiIO-_a9-1prmsItZ7RPQCm4mtjaD9dylXvbLtQf3HDDgU0Q9F7k4eIN9PUEUp49GMcJdtrW3"/>
+<span class="absolute top-3 left-3 bg-primary-container text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Hemat 15%
+              </span>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Acoustic Audio Official</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Studio Pro ANC Wireless Over-Ear Headphone
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 1.849.000</div>
+<div class="text-body-sm font-body-sm text-secondary line-through">Rp 2.199.000</div>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-secondary">(120)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Matte black wireless noise-canceling headphones resting on a textured concrete surface against a warm slate gray studio backdrop. High-end industrial tech aesthetic with soft, subtle rim lighting accentuating ergonomic earcups and premium headband texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RUyYRsztsVlRxIuuD2Ocqtjfxyd70CpAS68ZUE_DROI_-M0KwqTgGxuT-4W_nkXuPBvka_X8x1Fn9lOWsye0HRIH4tgHJuA-E6uEuifS1UwT2FDkXtAuyX8boxPlqia8fSmy_TjRtG2MwkQTBfRpzcdadw0H9v8p9OhPUZ7YcHVNGYdjiVqpZzkkMi_yvuyo3rTwi8ltJql7oWhpV8xE9ZU2Z08ncjFl5nEAo0c3wb5kcxcmPpxZ"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">SoundLab Nusantara</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Noir SilentEdge 700 ANC Hi-Res Bluetooth 5.3
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 2.450.000</div>
+<span class="text-label-sm font-label-sm text-secondary">Terjual 340+</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+<span class="text-secondary">(88)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Minimalist sand beige wireless open-back headphones positioned beside an acoustic wooden panel. Warm neutral tones with architectural studio morning sunlight casting soft geometric shadows across a clean tabletop surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIJwUlfpBQccbfNPGEUM_-QHC-gWKOQUV0RvDrh0Sn09h7dEdSUJQVGmId6dUDuGY108wtIrRvH4_lyV0JUhMQW2_fU40WlDPwG9uV1mkt30l43zBMgcQeC1xWg-bi_bdKEZyafickhHQ3ozUceid78ti6Cm9YsKbJ62jPv9BVU3Zj9zWAQEp-KUalySJ7wajsAmNYCrPu5kcKwJUVznHhAwcbIftJboFA7T9QOQH0jhIT4IoK9Zjs"/>
+<span class="absolute top-3 left-3 bg-surface-container text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded border border-surface-container-highest">
+                Baru
+              </span>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Nordic Sound Store</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Beige Flow Master Open-Acoustic Audiophile
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 3.120.000</div>
+<span class="text-label-sm font-label-sm text-secondary">Free Ongkir</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>5.0</span>
+<span class="text-secondary">(42)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Futuristic dark metallic gaming headset featuring subtle orange LED accents and an integrated retractable microphone. Photographed in an ultra-clean modern desk setup with diffused background ambient lighting and razor-sharp textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6X0FmpbJgRqVXunJyDWI2f7i8bkWFpGyW9lA6bE270gzB9T97CX-fSlOYKq8vjy9S86FveFraaW30r_wKhMZfh_ovGnb05Vjs2JqZDESrhuiDoirHJ5dGDfPj-eg-X2ws27bB3MdyoNrqzmW4f8A0J4RVXuvKG2FCiIBI4_gNGbSZae7UkIlOloEu9oYrVh6LIxHafzGSbub86KQk0XO2z74aZpjFhTo5G7Qm8C1MUW0BO-KjHZtc"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="storefront">storefront</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Apex Gear ID</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Apex Pulse Spatial Audio Gaming Headset 7.1
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 899.000</div>
+<div class="text-body-sm font-body-sm text-secondary line-through">Rp 1.199.000</div>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7</span>
+<span class="text-secondary">(215)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Retro inspired studio headphones with hand-stitched tan brown leather headband and brushed copper ear-cup rings. Elegant high-end editorial product setting with warm, soft diffused studio light on pristine white architectural marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdofbDMXt8jaIN4B3dL5IE15c2VBc5jTGRQ_0bvxPAxg0ClQzYm67qT6h8hXUpno8HYwRMJ39leeKZR9N-MKfse50OnsP79A0NE5O3KX0pMm24CkLqZNhIOQBK_FTL_09yD4_xQZEo0yNf1drVbL8_gt4viPmRt0LIugPFwsipQaCHdgqqJ-cgx9YtM7iiDBtHnCbkfeYmfFzoaAwd0HS5-pz_u_bAhdOtNJQpuLcU-khS8r9YbOwt"/>
+<span class="absolute top-3 left-3 bg-primary-container text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Hemat 20%
+              </span>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Vintage Acoustic Co.</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Heritage Leather Edition Studio Reference Monitor
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 2.799.000</div>
+<div class="text-body-sm font-body-sm text-secondary line-through">Rp 3.499.000</div>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-secondary">(73)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ultralight sport wireless earbuds with flexible ear hooks resting in an open matte gray charging case. Crisp studio lighting highlighting splash-resistant athletic silicone material on a geometric concrete backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgT535BSPjLJ-DXgo6L3B2oI18Zo4FJvwmJTSlYxVygJcq64i6TDe8-J3-TIJqG6hdPcqZNZYOZWqSlNfTJzZpdjXjLA1B0mgtglYKzY_LSZCZ3mBrykdggl3Mg_UAkKrD8-kEEdFlHqWHOhPCH_yhoSKO5pNGz3wpeBmreeVHT2oN8HC-jRVWrjlC8qB6id8jSBscq2Bdj8hqYCqjuVLXSU5iXIUV2xJ7rBFN66xWOsuTGx-8sPJg"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Velocity Active Tech</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                AeroFit Active IPX7 Waterproof Sport Headset
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 649.000</div>
+<span class="text-label-sm font-label-sm text-secondary">Garansi 2 Tahun</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.6</span>
+<span class="text-secondary">(310)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Compact foldable on-ear white headphones with soft rose-gold metallic accents resting against a smooth pastel backdrop. High key minimalist lifestyle product photograph showing clean lines, lightweight design, and modern finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBelkdvzGHenaST_B1n9isXScY88GWhkFJqRhzdhS3Gy3oxTelVjqdeR3h1W6CudT8nPR8eTlg1zq0aR327fu1UbtwsJaT2TbMxtXP79YOgHu4G4xewVaVfhxhqWaqBjpjye9pMe41wXfWBbjUt3fkRHvhATSMWtdAvi51w-pdkXFupffXhF0K8aHYkdh2pE-uIr0NsuOkbEB6cd4N89pbGdZ_VxDb7xRX7szywRepUzBlyhYxghGK2"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">PureSound Store</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Urban Lite Foldable On-Ear Wireless 40h Battery
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 480.000</div>
+<span class="text-label-sm font-label-sm text-secondary">Terjual 500+</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+<span class="text-secondary">(194)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Professional DJ monitoring headphones with rotating ear cups and coiled heavy-duty cable on an audio mixing desk. Moody technical studio environment with precise accent lighting reflecting off textured carbon-fiber details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWer3WEQ9AtvVwYBZPBxOHRaYUcxhDvHmgJbnKteD72Qu_PvM9csakg-8DrPIB3AvN3y0fShsfYg1CztskVxjSHLjT0BcGg356faShOl2Z28TvS8XZ4gJgyA3utiiwbMPQfH2xry7WJookT7RQdfMlBvgc8oIgdJiMaWXjcTbigX5isU3PquXE24HE1FnkUjVbqtQMI1T9af30StyDQYtGt4xKU0dPt03CWFdktiANN-1jNQixfV6k"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="storefront">storefront</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">DJ Pro Audio Hub</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                ClubMix 90 Pro Closed-Back Dynamic Headphone
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 1.450.000</div>
+<div class="text-body-sm font-body-sm text-secondary line-through">Rp 1.650.000</div>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-secondary">(67)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+<!-- Card 9 -->
+<article class="group bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden hover:border-slate-400 hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="relative aspect-square bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Titanium gray open-ear bone conduction headphones resting gracefully on a sleek glass slab with calm water reflection. Architectural high-end technological minimalism with neutral light and sharp edge clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMx1k_yocbCwlVur3YRaRiWZSVKUvEIxwQdQKjAPWgEk7iiDfSyIf0a2ZzgDobGfAdVjacnRHRGjCQL-pc-eIF9yITgzghzmvYO8jSbtm59URc-qZFeG5jCUqS_oxH0Ga7AtFF1GkzC6-zMSIs6hvQg9h5AkR-6_L_3AqLjBzXERyRVYW84l8CeUPN_Mmvi284QarcKe1ZgvCZhbU2AY1GF0H-xDvdbRoHjVNOoofk_pHU2HEnhq8T"/>
+<span class="absolute top-3 left-3 bg-primary-container text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Official
+              </span>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary truncate">Titanium Sound Tech</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface text-[15px] line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                Onyx Conduction Bone-Ear Bluetooth Headphone
+              </h3>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">Rp 1.150.000</div>
+<span class="text-label-sm font-label-sm text-secondary">Garansi Resmi</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7</span>
+<span class="text-secondary">(142)</span>
+</div>
+</div>
+<a class="mt-3.5 w-full py-2 px-3 border border-surface-container-highest hover:border-primary hover:text-primary text-center text-label-md font-label-md text-on-surface rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors" href="#">
+                Lihat Detail
+              </a>
+</div>
+</article>
+</div>
+<!-- Clean Pagination -->
+<nav aria-label="Navigasi Halaman" class="pt-8 pb-4 flex items-center justify-center">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest border border-surface-container-highest p-1.5 rounded-xl shadow-sm">
+<!-- Sebelumnya -->
+<button class="flex items-center gap-1 px-3 py-2 text-label-md font-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+<span class="hidden sm:inline">Sebelumnya</span>
+</button>
+<!-- Number Buttons -->
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-label-md font-label-md bg-primary-container text-on-primary font-semibold shadow-sm" type="button">
+              1
+            </button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-label-md font-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+              2
+            </button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-label-md font-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+              3
+            </button>
+<span class="w-8 flex items-center justify-center text-secondary text-body-sm font-body-sm select-none">
+              ...
+            </span>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-label-md font-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+              8
+            </button>
+<!-- Selanjutnya -->
+<button class="flex items-center gap-1 px-3 py-2 text-label-md font-label-md text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+<span class="hidden sm:inline">Selanjutnya</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</nav>
+</section>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest full-width border-t border-surface-container-highest mt-16">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg py-12 w-full">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-surface-container-highest">
+<!-- Brand identity in footer -->
+<div class="md:col-span-4 space-y-3">
+<a class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight flex items-center gap-1.5" href="#">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm">M</span>
+<span>MarketPlace</span>
+</a>
+<p class="text-body-sm font-body-sm text-secondary max-w-sm">
+            Platform multi-vendor terpercaya yang menghubungkan pembeli cerdas dengan ribuan toko resmi dan produsen independen berkualitas tinggi di seluruh Indonesia.
+          </p>
+<div class="flex items-center gap-3 pt-2 text-secondary">
+<span class="material-symbols-outlined text-[20px] hover:text-primary cursor-pointer transition-colors" data-icon="shield_with_heart">shield_with_heart</span>
+<span class="material-symbols-outlined text-[20px] hover:text-primary cursor-pointer transition-colors" data-icon="verified_user">verified_user</span>
+<span class="material-symbols-outlined text-[20px] hover:text-primary cursor-pointer transition-colors" data-icon="local_shipping">local_shipping</span>
+</div>
+</div>
+<!-- Links Columns from Shared Spec -->
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface text-[15px] mb-3">Tentang</h4>
+<ul class="space-y-2 text-body-sm font-body-sm">
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Tentang Kami</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Daftar Jadi Vendor</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Karir</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface text-[15px] mb-3">Bantuan &amp; Panduan</h4>
+<ul class="space-y-2 text-body-sm font-body-sm">
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Pusat Bantuan</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Kontak Layanan Pelanggan</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Panduan Pembeli</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface text-[15px] mb-3">Kebijakan</h4>
+<ul class="space-y-2 text-body-sm font-body-sm">
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
+<li><a class="text-secondary hover:text-primary transition-colors" href="#">Perlindungan Hak Cipta</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Copyright Bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-body-sm font-body-sm text-secondary text-center sm:text-left">
+          © 2025 MarketPlace Inc. Hak Cipta Dilindungi. Platform Multi-Vendor Terpercaya.
+        </p>
+<div class="flex items-center gap-4 text-label-md font-label-md text-secondary">
+<span class="inline-flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Semua Sistem Operasional Normal
+          </span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

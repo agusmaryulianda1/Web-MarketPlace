@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Produk - MarketPlace Portal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#eff1f3",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#8c9cb4",
+            "surface-tint": "#9d4300",
+            "error": "#ba1a1a",
+            "background": "#f7f9fb",
+            "surface-bright": "#f7f9fb",
+            "on-primary-fixed": "#341100",
+            "tertiary-fixed": "#d3e4fe",
+            "surface-dim": "#d8dadc",
+            "surface-container": "#eceef0",
+            "on-primary-fixed-variant": "#783200",
+            "primary-fixed": "#ffdbca",
+            "on-tertiary-container": "#243348",
+            "primary": "#9d4300",
+            "on-tertiary-fixed-variant": "#38485d",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-tertiary-fixed": "#0b1c30",
+            "outline": "#8c7164",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-low": "#f2f4f6",
+            "on-surface": "#191c1e",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "secondary-container": "#dae2fd",
+            "on-primary-container": "#582200",
+            "secondary": "#565e74",
+            "surface-container-highest": "#e0e3e5",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "outline-variant": "#e0c0b1",
+            "on-secondary-container": "#5c647a",
+            "tertiary": "#505f76",
+            "inverse-surface": "#2d3133",
+            "on-primary": "#ffffff",
+            "primary-container": "#f97316",
+            "primary-fixed-dim": "#ffb690",
+            "surface-container-high": "#e6e8ea",
+            "on-surface-variant": "#584237",
+            "secondary-fixed": "#dae2fd",
+            "inverse-primary": "#ffb690",
+            "surface-variant": "#e0e3e5",
+            "on-error": "#ffffff",
+            "on-background": "#191c1e",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter-sm": "1rem",
+            "margin-sm": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "3rem",
+            "gutter": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-md": "1rem",
+            "margin": "1.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "body-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 z-40 bg-surface-container-lowest border-r border-surface-variant shadow-sm select-none">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Brand & Profile Header -->
+<div>
+<div class="flex items-center gap-3 px-3 py-3 mb-6 border-b border-surface-container-low pb-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="storefront">storefront</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight truncate">MarketPlace Portal</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Seller &amp; Admin Central</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="space-y-1">
+<!-- 1: Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- 2: Produk (ACTIVE MATCH) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container/10 text-primary font-label-lg text-label-lg font-semibold border-r-2 border-primary active:scale-[0.98] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>Produk</span>
+</a>
+<!-- 3: Pesanan (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span>Pesanan</span>
+</a>
+<!-- 4: Toko (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+<span>Toko</span>
+</a>
+<!-- 5: Pengaturan (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</a>
+</nav>
+</div>
+<!-- Quick Action & Footer Tabs -->
+<div class="space-y-4 pt-4 border-t border-surface-container-low">
+<!-- CTA: Buka Toko -->
+<button class="w-full py-2.5 px-3 rounded-lg border border-surface-variant hover:bg-surface-container-low text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="store">store</span>
+<span>Buka Toko</span>
+</button>
+<!-- Footer Navigation -->
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_outline">help_outline</span>
+<span>Bantuan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-error hover:bg-error-container/30 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas Container -->
+<div class="ml-72 flex-1 flex flex-col min-w-0 bg-background min-h-screen">
+<!-- TopNavBar Component -->
+<header class="docked full-width top sticky top-0 z-30 bg-surface-container-lowest border-b border-surface-variant shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<!-- Left Title & Search Area -->
+<div class="flex items-center gap-6 flex-1 max-w-xl">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight whitespace-nowrap">Manajemen Produk</h1>
+<!-- Global Search Input -->
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-sm bg-surface-container-low border border-surface-variant rounded-lg text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Cari fitur, produk, pesanan..." type="text"/>
+</div>
+</div>
+<!-- Right Side Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Notification & Settings Icons -->
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-95 relative" title="Notifikasi">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-95" title="Filter &amp; Pengaturan Tampilan">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<!-- Primary CTA Button -->
+<button class="flex items-center gap-1.5 bg-primary-container hover:bg-surface-tint text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg font-semibold shadow-sm transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>Tambah Produk</span>
+</button>
+<!-- Profile Thumbnail -->
+<div class="flex items-center gap-2 pl-2 border-l border-surface-variant">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Editorial close-up portrait of an Indonesian merchant professional in minimalist modern business attire, bright studio lighting with clean neutral high-key background and sharp studio photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuActcNsMaEdCPmswVRtJE2A0WzkV9FPvfBYaMN5i7EpBeqi6hEom6KI6FfwklZXISau6IVEmGw3J-z0DSRHQmjP8cybF4Ll1YlrNRM-dGK-kCYJO_z7DUKayFTw9lPdMs1_Z82YLbUbCDt_gDTC-kEKV5-ftxN76TVNMIfM73BoLnrGRHN8SZA4wlxORxfKF4jOJnfiHinW4za9NmGQe8vi1Nzb4VViQdBOTgBoWbDx7IBF4pRc26Wy"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Body -->
+<main class="p-8 space-y-6 max-w-[1440px]">
+<!-- 1. Header Section -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Daftar Produk Toko</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Kelola katalog produk, stok inventaris, dan harga jual toko Anda.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-surface-variant text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg px-4 py-2.5 rounded-lg transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+<span>Ekspor CSV</span>
+</button>
+<button class="flex items-center gap-2 bg-primary-container hover:bg-surface-tint text-on-primary font-label-lg text-label-lg px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+<span>+ Tambah Produk Baru</span>
+</button>
+</div>
+</section>
+<!-- 2. Status Bento Metrics / Quick Stats (Editorial Flourish) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-variant shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Total Katalog</span>
+<p class="font-headline-md text-headline-md font-bold text-on-surface mt-0.5">42 Produk</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory">inventory</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-variant shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Produk Aktif</span>
+<p class="font-headline-md text-headline-md font-bold text-on-surface mt-0.5">38 Unit</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-variant shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Stok Kritis / Menipis</span>
+<p class="font-headline-md text-headline-md font-bold text-on-surface mt-0.5">2 Produk</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-variant shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Stok Habis</span>
+<p class="font-headline-md text-headline-md font-bold text-error mt-0.5">2 Produk</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="remove_shopping_cart">remove_shopping_cart</span>
+</div>
+</div>
+</section>
+<!-- 3. Filter & Action Card Container -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden">
+<!-- Filter Tabs & Controls -->
+<div class="p-4 border-b border-surface-variant flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Status Category Tabs -->
+<div class="flex items-center gap-1 overflow-x-auto pb-1 lg:pb-0">
+<button class="px-3.5 py-1.5 rounded-lg bg-on-surface text-surface-container-lowest font-label-md text-label-md font-semibold transition-all">
+              Semua (42)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-all">
+              Aktif (38)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-all">
+              Stok Habis (2)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-all">
+              Diarsipkan (2)
+            </button>
+</div>
+<!-- Search & Select Facets -->
+<div class="flex items-center gap-3">
+<!-- Search bar input -->
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-sm bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Cari nama produk, SKU..." type="text"/>
+</div>
+<!-- Category dropdown filter -->
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-1.5 text-body-sm font-label-md text-on-surface bg-surface-container-lowest border border-surface-variant rounded-lg focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container cursor-pointer">
+<option selected="">Semua Kategori</option>
+<option>Elektronik</option>
+<option>Audio</option>
+<option>Aksesoris PC</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px] pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 4. Product Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant text-secondary font-label-sm text-label-sm tracking-wider uppercase select-none">
+<th class="py-3.5 pl-6 pr-3 w-10">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold">Produk</th>
+<th class="py-3.5 px-4 font-semibold">Kategori</th>
+<th class="py-3.5 px-4 font-semibold text-right">Harga (Rp)</th>
+<th class="py-3.5 px-4 font-semibold text-center">Stok</th>
+<th class="py-3.5 px-4 font-semibold">Status</th>
+<th class="py-3.5 pr-6 pl-4 font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- ROW 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container border border-surface-variant overflow-hidden flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Modern premium wireless noise cancelling over-ear headphones in matte black finish, positioned at an elegant isometric angle with neutral studio lighting, high product fidelity on pure light slate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRMEVNsdzRpUTIp2UDuWC7yM7jC98CPEGhivnSaDXZty10YILDdccsCFsdenk04L0R4V2Vp_z3gTgixIXQMpIpVPJiMBwyFyHlhHYfgho4GPM2mUtVQS2AqVpMmeGdbRFaQuUfIP3kwnR2nzRIk4ZstDGksS3PsX73yq_eeUHOpjnjhzoLisyEE3dfpqhXs9P6VZqYBXez1gh79zYPXBWgoiX7YmV_pcVSiIh1JKczOt2JLDSpQHv2"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Headphone Wireless Noise-Cancelling Pro</span>
+<span class="font-body-sm text-body-sm text-secondary font-mono">SKU: PRO-ANC-BLK-01</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-surface-container text-secondary">Audio</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface tabular-nums">1.899.000</span>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold tabular-nums">42 unit</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Aktif</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container border border-surface-variant overflow-hidden flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Sleek wireless 75 percent mechanical keyboard with custom dye-sub keycaps, aluminum chassis, photographed from a crisp top-down angle with crisp shadows in a bright, modern studio setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsnOc8xZJZrAfIHqJPwE2gIsvbOER8Ue5rkEMCoQNYroakNpPCc37fOFkYyWb6YKAmqQ-5ognuDvuKL5UZgE97QfMNHh0Ejk6ExNNvQ8-yTehBYUMPvycO9bnmWHLs0nJlMSBPIgNAd4RVWPAKGSF3Ga1o5Nx8tFiUKImVeEZfUINfYXiuw6Ur6yDK1tsrQYLkOElSmPeUeYD3OOBSioKl06uIa1AbUGJxSGuNuRfoMcCxIRq5gG0M"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Mechanical Keyboard 75% Wireless</span>
+<span class="font-body-sm text-body-sm text-secondary font-mono">SKU: KB-75-RGB</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-surface-container text-secondary">Aksesoris PC</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface tabular-nums">1.150.000</span>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold tabular-nums">18 unit</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Aktif</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container border border-surface-variant overflow-hidden flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High-end studio grade wireless over-ear headphones with brushed steel accents and plush gray ear cushions, crisp architectural perspective in an immaculate white light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCiTSPVE470kSWeOhb7R7lMfyIXa_yShw6vjSRLCiUe419EDOQ_DCn6iaM6n3IgN5tN2V8qtavYdAzOjGPsbvzreFJ72QYKBC5Hechvx51lVFBd_Z9bFGdkVG8IMSdNUZBO31dbc52UA_u8JzXgUliTRNNTGFTZOC2HkfVM8NJRKmjEWgFpNyfDZoIWiTLyudsdpiaPuIpdnoyWGDFpZZ-uwVu2rhM1mbVWX31SLeuu_2dnp5tq4E"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Studio Pro ANC Wireless Over-Ear</span>
+<span class="font-body-sm text-body-sm text-secondary font-mono">SKU: ANC-OVER-02</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-surface-container text-secondary">Audio</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface tabular-nums">1.849.000</span>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-body-md text-body-md text-amber-600 font-semibold tabular-nums">5 unit</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span>Stok Menipis</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container border border-surface-variant overflow-hidden flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Compact portable headphone DAC amplifier with CNC machined aluminum body, volume wheel detail, photographed close-up with soft diffused lighting on a minimal light gray surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP0nTc5JASyDGWtMiSKhK_VO02FoHpXkjjjoe9tDlbEph_QN-kMWNzeMjiADJGn4qsn-b-A2y7xSM5bJhwn6Va_izuHsF2po22OcW8gqYe3XCFlsCPtGpOLkyLuytSnkO4pErtV6UBFrneJfQsnCq4YxLlTRRRON2AI7jsv8m8YcN0cqeryneZOtaMQph-KjHhUXrYfz_3ONwNfoL6aXN4RpI1tqJpUhDebCOfSfG8RsPSPhfOi8Aj"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface group-hover:text-primary transition-colors">DAC Amp Portable Hi-Res</span>
+<span class="font-body-sm text-body-sm text-secondary font-mono">SKU: DAC-AMP-01</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-surface-container text-secondary">Aksesoris Audio</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface tabular-nums">850.000</span>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-body-md text-body-md text-error font-semibold tabular-nums">0 unit</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-red-50 text-error border border-red-200">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Habis</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded border-surface-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container border border-surface-variant overflow-hidden flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Transparent resin dual driver in-ear monitor earphones coiled neatly with braided silver-plated copper cable, high-definition macro product photography with soft shadows on a minimalist neutral backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUM49KL063ipywcUOxxCtYgKikHTbrY1PXBCKGXjva3M_lbfFcJTYf1XYHhaZ9qtEnos-nmuD71GZo5D7czrxgfivQfq2gD5zm2RKI6pO3QVlyo4qD6XAElgdRR9_tMiy8www3C-k5FU0sw7pusQQtIIO2h5e8T6UWbSlTAGNm1PFqQh3uiNGBjSQydNdNwsYBk5JAmnNHsYVKmhf2THrl8J8eVorhhD0nQdH-q4ldIgHrlOgXcQba"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Earphone In-Ear Monitor Dual Driver</span>
+<span class="font-body-sm text-body-sm text-secondary font-mono">SKU: IEM-D2-09</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-surface-container text-secondary">Audio</span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface tabular-nums">450.000</span>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold tabular-nums">64 unit</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Aktif</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Produk">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- 5. Pagination Footer -->
+<div class="px-6 py-4 border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-4 select-none">
+<p class="font-body-sm text-body-sm text-secondary">
+            Menampilkan <span class="font-semibold text-on-surface">1 - 5</span> dari <span class="font-semibold text-on-surface">42</span> produk
+          </p>
+<div class="flex items-center gap-1">
+<!-- Previous Button -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-surface-variant text-secondary hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_left">chevron_left</span>
+<span>Previous</span>
+</button>
+<!-- Page 1 (Active) -->
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center">
+              1
+            </button>
+<!-- Page 2 -->
+<button class="w-8 h-8 rounded-lg border border-surface-variant text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-medium flex items-center justify-center transition-colors">
+              2
+            </button>
+<!-- Page 3 -->
+<button class="w-8 h-8 rounded-lg border border-surface-variant text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-medium flex items-center justify-center transition-colors">
+              3
+            </button>
+<span class="px-1 text-secondary font-mono text-body-sm">...</span>
+<!-- Next Button -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-surface-variant text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Editorial Footer Tip / Seller Trust Card -->
+<section class="bg-surface-container-low/50 border border-surface-variant rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="tips_and_updates">tips_and_updates</span>
+<div>
+<h4 class="font-label-lg text-label-lg font-semibold text-on-surface">Optimasi Inventaris Toko</h4>
+<p class="font-body-sm text-body-sm text-secondary">Pastikan untuk segera memperbarui stok produk 'Habis' agar tetap dapat diakses pembeli pada laman etalase MarketPlace.</p>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline whitespace-nowrap px-3 py-1.5">
+          Pelajari Selengkapnya
+        </button>
+</section>
+</main>
+</div>
+</body></html>

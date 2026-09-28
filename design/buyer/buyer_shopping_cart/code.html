@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Keranjang Belanja - MarketPlace</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f2f4f6",
+            "on-error": "#ffffff",
+            "primary": "#9d4300",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-error-container": "#93000a",
+            "surface-tint": "#9d4300",
+            "inverse-on-surface": "#eff1f3",
+            "secondary": "#565e74",
+            "tertiary": "#505f76",
+            "on-tertiary-container": "#243348",
+            "tertiary-container": "#8c9cb4",
+            "on-surface": "#191c1e",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#d8dadc",
+            "background": "#f7f9fb",
+            "surface": "#f7f9fb",
+            "tertiary-fixed": "#d3e4fe",
+            "primary-fixed-dim": "#ffb690",
+            "secondary-fixed": "#dae2fd",
+            "on-primary-fixed-variant": "#783200",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "on-primary-container": "#582200",
+            "inverse-primary": "#ffb690",
+            "surface-bright": "#f7f9fb",
+            "primary-container": "#f97316",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "outline": "#8c7164",
+            "outline-variant": "#e0c0b1",
+            "on-background": "#191c1e",
+            "on-primary-fixed": "#341100",
+            "secondary-container": "#dae2fd",
+            "surface-variant": "#e0e3e5",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#584237",
+            "inverse-surface": "#2d3133",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed": "#ffdbca",
+            "on-tertiary-fixed-variant": "#38485d",
+            "surface-container": "#eceef0",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary-fixed": "#0b1c30"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-sm": "1rem",
+            "gutter-lg": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "margin-lg": "3rem",
+            "gutter-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-xl": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-xl": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-xl-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input[type="checkbox"]:checked {
+      background-color: #f97316;
+      border-color: #f97316;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TOP APP BAR / HEADER -->
+<header class="bg-surface-container-lowest docked full-width top-0 sticky z-40 border-b border-surface-container-highest shadow-sm">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg w-full flex items-center justify-between h-20 gap-4 md:gap-8">
+<!-- Brand Logo & Global Search -->
+<div class="flex items-center gap-6 md:gap-8 flex-1">
+<a class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight flex items-center gap-2 shrink-0" href="#">
+<span class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+</span>
+          MarketPlace
+        </a>
+<!-- Search Bar (on_left configuration) -->
+<div class="hidden sm:flex items-center flex-1 max-w-lg relative">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-surface-container-highest rounded-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" placeholder="Cari produk, merk, atau toko vendor..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Katalog</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Toko Vendor</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Promo</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Bantuan</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3 md:gap-4 shrink-0">
+<!-- Notification Icon -->
+<button aria-label="Notifikasi" class="p-2 rounded-lg text-secondary hover:bg-surface-container-low transition-colors duration-150 relative" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<!-- Cart Action Icon (Active State) -->
+<a aria-label="Keranjang Belanja" class="p-2 rounded-lg text-primary bg-surface-container-low transition-colors duration-150 relative flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_cart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary-container text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-full min-w-[18px] text-center font-bold">
+            3
+          </span>
+</a>
+<div class="h-6 w-[1px] bg-surface-container-highest hidden sm:block"></div>
+<!-- Buyer Profile Avatar & Info -->
+<div class="flex items-center gap-2.5 pl-1 cursor-pointer group">
+<img alt="Foto profil pembeli" class="w-9 h-9 rounded-full object-cover border border-surface-container-highest group-hover:border-primary-container transition-colors" data-alt="A clean, polished profile portrait of an Indonesian professional woman buyer in modern office lighting with neutral background, smiling warmly, showcasing premium e-commerce buyer identity in crisp detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm96rwNvU3rnUue7Sha3vsoMLPV6lWap4PPJsKvMQG1g6yf8Waz5VJThotmxYLTELZ6WZdQUJxTmap_jJpBZU9PbBAqg38R2nsTwwNYBT4Jf3h6xFac2tzjpZFCselyHaD2Y9W8QsHi4DAD4GXczAX4D1CaGDObGCdbzkpeHOed58y0PhOru1q8JNqN3CB3kc6mRz4hYZZHrsTHfBvitKmuzBZs6zjlnQAIIOP1CEqjaRkgt0Duzm4"/>
+<div class="hidden xl:flex flex-col text-left">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Budi Santoso</span>
+<span class="font-body-sm text-body-sm text-secondary">Pembeli Platinum</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 max-w-7xl mx-auto px-margin md:px-margin-lg w-full py-8">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div>
+<nav class="flex items-center gap-2 font-body-sm text-body-sm text-secondary mb-1.5">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-medium">Keranjang Belanja</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Keranjang Belanja <span class="text-secondary font-headline-sm text-headline-sm font-normal">(3 Produk)</span>
+</h1>
+</div>
+<!-- Trust Indicator Strip -->
+<div class="hidden sm:flex items-center gap-2 bg-surface-container-lowest border border-surface-container-highest px-3.5 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[18px] text-emerald-600" data-icon="verified_user">verified_user</span>
+<span class="font-label-md text-label-md text-secondary">Transaksi Dijamin Aman &amp; Bebas Penipuan</span>
+</div>
+</div>
+<!-- 2-COLUMN STRUCTURE (70% Items & Vendors / 30% Order Summary) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-lg items-start">
+<!-- LEFT COLUMN: Product Item Selection grouped by Vendor (approx 70% / 8 cols in 12-col grid) -->
+<div class="lg:col-span-8 flex flex-col gap-5">
+<!-- Global Selection Controller Bar -->
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl p-4 flex items-center justify-between shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
+<label class="flex items-center gap-3 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" id="select-all" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Pilih Semua (3 Produk)</span>
+</label>
+<button class="font-label-md text-label-md text-secondary hover:text-error transition-colors flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-surface-container-low" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+<span>Hapus Produk Terpilih</span>
+</button>
+</div>
+<!-- VENDOR GROUP 1: AudioTech Official Store -->
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
+<!-- Vendor Header -->
+<div class="bg-surface-container-low/60 px-5 py-3.5 border-b border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-3">
+<input checked="" class="vendor-group-1 w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="storefront">storefront</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">AudioTech Official Store</span>
+<!-- Verified Badge -->
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest border border-surface-container-highest px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px] text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-secondary">Official</span>
+</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary hidden sm:inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="location_on">location_on</span>
+              Jakarta Barat
+            </span>
+</div>
+<!-- Product Item 1 -->
+<div class="p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:bg-surface-container-low/30 transition-colors">
+<!-- Checkbox -->
+<div class="pt-1 sm:pt-0">
+<input checked="" class="item-checkbox w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<!-- Product Image -->
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-surface-container-low border border-surface-container-highest overflow-hidden shrink-0 flex items-center justify-center">
+<img alt="Headphone Wireless Noise-Cancelling Pro - Matte Black" class="w-full h-full object-cover" data-alt="Modern premium wireless over-ear noise-cancelling headphones in matte black finish, photographed isolated in a studio with clean soft ambient lighting on a minimalist off-white aesthetic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF6Xdys4RAO8H9VsPQHyQHM03XIXHvhWeXfD4tYwL54psgH4YkGkQgQxAbm6Yz_9sivWfBgYziGv8zdlRR8Upjg9Zxh0izYb1Kn--D6q0d0EiFrVrvJanTspfEveAlDHWDgnJg1QpDSSIRvfnfBjMmpLYsPLQYVhAes5ElHPLMk9fZS0EQlyd46-onn6nYtRKn6FFMJBmF-vVrxM0XtMeh7CSzC-K67gvYRLX2LGpCPhRAEYHSWZJU"/>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between self-stretch">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block mb-1">Audio &amp; Aksesoris</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer line-clamp-1">
+                  Headphone Wireless Noise-Cancelling Pro - Matte Black
+                </h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Rp 1.899.000</span>
+<span class="text-body-sm font-body-sm text-secondary">/ unit</span>
+</div>
+</div>
+<!-- Action Bar (Quantity + Subtotal + Delete) -->
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-surface-container-highest/60 sm:border-t-0 sm:pt-0">
+<!-- Quantity Selector -->
+<div class="flex items-center border border-surface-container-highest rounded-lg bg-surface-container-lowest overflow-hidden">
+<button aria-label="Kurangi kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-label-md text-label-md font-semibold text-on-surface">1</span>
+<button aria-label="Tambah kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Subtotal & Trash Action -->
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-secondary block">Subtotal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 1.899.000</span>
+</div>
+<button aria-label="Hapus Item" class="p-2 text-secondary hover:text-error hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VENDOR GROUP 2: Urban Threads Store -->
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl overflow-hidden shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
+<!-- Vendor Header -->
+<div class="bg-surface-container-low/60 px-5 py-3.5 border-b border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-3">
+<input checked="" class="vendor-group-2 w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="storefront">storefront</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Urban Threads Store</span>
+<!-- Star Merchant Badge -->
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest border border-surface-container-highest px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px] text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-secondary">Star Seller</span>
+</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary hidden sm:inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="location_on">location_on</span>
+              Kota Bandung
+            </span>
+</div>
+<!-- Product Item 2: Sneakers -->
+<div class="p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:bg-surface-container-low/30 transition-colors border-b border-surface-container-highest">
+<!-- Checkbox -->
+<div class="pt-1 sm:pt-0">
+<input checked="" class="item-checkbox w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<!-- Product Image -->
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-surface-container-low border border-surface-container-highest overflow-hidden shrink-0 flex items-center justify-center">
+<img alt="Sneakers Urban Minimalist White - Size 42" class="w-full h-full object-cover" data-alt="Editorial product photo of minimalist clean white low-top leather sneakers resting on a light slate background with crisp architectural shadows and elegant lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeYaR1iMucqtPE9KwWkEzl8AK2b_ZfDUXlrjMqdbojsO_f_km4bOSQEoiTY0zjE36mqI7sFiMr8TbTfPGABwuQTe5kjxVLnT8k2FnOLTGkp6rnQxeI069UB7cShFR9Z-BZCS0Gpxa5I9CrJGTooEv_8xpjVdGiXn6BI6TEXubm8k7CBXEGaWzdigPJsGexr__PcOH-otEZTr-aRWjtd4bK1PVOvenynvzIyhE3PhIoKCbAwA1__g0n"/>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between self-stretch">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block mb-1">Sepatu Pria • Size 42</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer line-clamp-1">
+                  Sneakers Urban Minimalist White - Size 42
+                </h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Rp 650.000</span>
+<span class="text-body-sm font-body-sm text-secondary">/ pasang</span>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-surface-container-highest/60 sm:border-t-0 sm:pt-0">
+<!-- Quantity Selector -->
+<div class="flex items-center border border-surface-container-highest rounded-lg bg-surface-container-lowest overflow-hidden">
+<button aria-label="Kurangi kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-label-md text-label-md font-semibold text-on-surface">1</span>
+<button aria-label="Tambah kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Subtotal & Trash Action -->
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-secondary block">Subtotal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 650.000</span>
+</div>
+<button aria-label="Hapus Item" class="p-2 text-secondary hover:text-error hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Item 3: Oxford Shirt -->
+<div class="p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:bg-surface-container-low/30 transition-colors">
+<!-- Checkbox -->
+<div class="pt-1 sm:pt-0">
+<input checked="" class="item-checkbox w-4 h-4 rounded text-primary-container border-surface-container-highest focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<!-- Product Image -->
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-surface-container-low border border-surface-container-highest overflow-hidden shrink-0 flex items-center justify-center">
+<img alt="Kemeja Katun Oxford Slim Fit - Navy L" class="w-full h-full object-cover" data-alt="Folded premium navy blue oxford cotton slim fit button-down shirt with fine fabric texture, photographed on a studio light gray background with sharp detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABGaCgJTfY6D1ziMHDQMGg8OevNUyXU3xuzNmrZTJ0LKZuuWbeY0HIuh9Dr1Hz6Q6K3lrhusxJXbQ3GSL4H79oZ8PKSl6LfoiVbiP9R9HtS1IYWtEXPXPFOzu36YufRFJna6oL_YknBqksi_ywLdJgaSxUj8s9ve5knxZreyatmt31AVmN6BgckWe-yEul2tDHUZTq9ZfeZVRsi-_Hz6qC2h_xUpxHSMTUw_ftixIa5yzKHRi65pyB"/>
+</div>
+<!-- Product Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between self-stretch">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block mb-1">Pakaian Pria • Navy (L)</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer line-clamp-1">
+                  Kemeja Katun Oxford Slim Fit - Navy L
+                </h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Rp 275.000</span>
+<span class="text-body-sm font-body-sm text-secondary">/ pcs</span>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-surface-container-highest/60 sm:border-t-0 sm:pt-0">
+<!-- Quantity Selector (Qty: 2) -->
+<div class="flex items-center border border-surface-container-highest rounded-lg bg-surface-container-lowest overflow-hidden">
+<button aria-label="Kurangi kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-label-md text-label-md font-semibold text-on-surface">2</span>
+<button aria-label="Tambah kuantitas" class="w-8 h-8 flex items-center justify-center text-secondary hover:bg-surface-container-low active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Subtotal & Trash Action -->
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-secondary block">Subtotal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 550.000</span>
+</div>
+<button aria-label="Hapus Item" class="p-2 text-secondary hover:text-error hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe Shopping Guarantee Banner -->
+<div class="bg-surface-container-low border border-surface-container-highest rounded-xl p-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="shield">shield</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold">Jaminan Kepuasan &amp; Perlindungan Pembeli</h3>
+<p class="font-body-sm text-body-sm text-secondary">Jika barang tidak sampai atau tidak sesuai deskripsi toko, saldo dana Anda dijamin kembali 100%.</p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Order Summary Card (approx 30% / 4 cols in 12-col grid) -->
+<div class="lg:col-span-4 lg:sticky lg:top-24">
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl p-6 shadow-[0_4px_12px_-2px_rgba(15,23,42,0.08)] flex flex-col gap-5">
+<!-- Card Title -->
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-4">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Ringkasan Belanja</h2>
+<span class="font-label-sm text-label-sm bg-surface-container-low text-secondary px-2.5 py-1 rounded-full font-medium">3 Barang</span>
+</div>
+<!-- Price Breakdown Breakdown -->
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<div class="flex items-center justify-between text-secondary">
+<span>Subtotal (3 barang)</span>
+<span class="font-medium text-on-surface">Rp 3.099.000</span>
+</div>
+<div class="flex items-center justify-between text-secondary">
+<span class="flex items-center gap-1.5">
+<span>Diskon Promo</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="local_offer">local_offer</span>
+</span>
+<span class="font-medium text-primary">- Rp 100.000</span>
+</div>
+<div class="flex items-center justify-between text-secondary">
+<span>Estimasi Ongkir</span>
+<span class="text-secondary font-body-sm text-body-sm italic">Dihitung saat checkout</span>
+</div>
+</div>
+<!-- Coupon / Promo Input Block -->
+<div class="pt-2">
+<label class="block font-label-md text-label-md text-secondary mb-2">Punya Kode Promo / Kupon?</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="absolute left-3 top-2.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="confirmation_number">confirmation_number</span>
+</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-lowest border border-surface-container-highest rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container uppercase font-semibold" placeholder="Masukkan kode promo" type="text" value="MARKETHEMAT"/>
+</div>
+<button class="px-4 py-2 border border-surface-container-highest rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-semibold transition-colors duration-150 shrink-0" type="button">
+                Gunakan
+              </button>
+</div>
+<p class="font-body-sm text-body-sm text-emerald-600 mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+              Kupon "MARKETHEMAT" berhasil digunakan (-Rp 100.000)
+            </p>
+</div>
+<!-- Hairline Divider -->
+<div class="h-[1px] bg-surface-container-highest w-full my-1"></div>
+<!-- Total Calculation -->
+<div class="flex items-end justify-between">
+<div>
+<span class="font-body-sm text-body-sm text-secondary block">Total Belanja</span>
+<span class="font-label-sm text-label-sm text-secondary">Termasuk PPN &amp; Diskon</span>
+</div>
+<div class="text-right">
+<span class="font-headline-xl text-headline-xl font-bold text-primary tracking-tight">
+                Rp 2.999.000
+              </span>
+</div>
+</div>
+<!-- Primary Large Orange CTA Button -->
+<button class="w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold shadow-sm hover:bg-[#ea580c] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 group" type="button">
+<span>Lanjut ke Checkout</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Security Note -->
+<div class="flex items-center justify-center gap-2 text-secondary pt-1">
+<span class="material-symbols-outlined text-[18px] text-emerald-600" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm">100% Pembayaran Aman &amp; Terverifikasi</span>
+</div>
+<!-- Accepted Payment Methods Miniature Bar -->
+<div class="pt-3 border-t border-surface-container-highest flex items-center justify-center gap-3 text-secondary opacity-70">
+<span class="material-symbols-outlined text-[20px]" data-icon="credit_card" title="Kartu Kredit / Debit">credit_card</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance" title="Transfer Bank Virtual Account">account_balance</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="payments" title="E-Wallet &amp; QRIS">payments</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="currency_exchange" title="Cicilan Instan">currency_exchange</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-surface-container-highest mt-16 flat no shadows">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-lg py-12 w-full flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Logo & Copyright -->
+<div class="flex flex-col gap-2 text-center md:text-left">
+<span class="text-headline-md font-headline-md font-bold text-on-surface">MarketPlace</span>
+<p class="text-body-sm font-body-sm text-secondary">
+          © 2025 MarketPlace Inc. Hak Cipta Dilindungi. Platform Multi-Vendor Terpercaya.
+        </p>
+</div>
+<!-- Footer Navigation Links -->
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-label-md font-label-md">
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Tentang Kami</a>
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Daftar Jadi Vendor</a>
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Pusat Bantuan</a>
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Kebijakan Privasi</a>
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Syarat &amp; Ketentuan</a>
+<a class="text-secondary hover:text-primary transition-colors duration-150" href="#">Kontak Layanan Pelanggan</a>
+</div>
+</div>
+</footer>
+</body></html>

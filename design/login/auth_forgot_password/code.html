@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lupa Kata Sandi - MarketPlace</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#9d4300",
+            "background": "#f7f9fb",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "tertiary-container": "#8c9cb4",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed": "#dae2fd",
+            "on-secondary-container": "#5c647a",
+            "surface-bright": "#f7f9fb",
+            "surface-container": "#eceef0",
+            "tertiary": "#505f76",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#38485d",
+            "on-surface-variant": "#584237",
+            "outline": "#8c7164",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "inverse-on-surface": "#eff1f3",
+            "outline-variant": "#e0c0b1",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#341100",
+            "surface-container-low": "#f2f4f6",
+            "primary-fixed-dim": "#ffb690",
+            "secondary": "#565e74",
+            "surface-container-highest": "#e0e3e5",
+            "primary-fixed": "#ffdbca",
+            "on-surface": "#191c1e",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#0b1c30",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#783200",
+            "surface-dim": "#d8dadc",
+            "surface-tint": "#9d4300",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-container": "#582200",
+            "primary-container": "#f97316",
+            "on-background": "#191c1e",
+            "secondary-fixed-dim": "#bec6e0",
+            "inverse-primary": "#ffb690",
+            "on-tertiary-container": "#243348",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed": "#d3e4fe",
+            "surface-variant": "#e0e3e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "1rem",
+            "margin-lg": "3rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-xl": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation Bar (Shared Component Source) -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-container-highest/80 sticky top-0 z-50">
+<div class="w-full max-w-[1440px] mx-auto px-gutter md:px-margin-lg flex items-center justify-between h-16">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-space-sm group" href="#">
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]" data-icon="storefront">storefront</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight font-extrabold">MarketPlace</span>
+</a>
+<!-- Navigation Links & Trailing Actions -->
+<div class="flex items-center gap-space-md md:gap-space-lg">
+<a class="hidden md:flex items-center gap-1 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+<span>Kembali ke Katalog</span>
+</a>
+<div class="h-4 w-px bg-surface-container-highest hidden md:block"></div>
+<a class="font-label-lg text-label-lg text-secondary hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+<span class="hidden sm:inline">Help</span>
+</a>
+<a class="hidden sm:inline-block font-label-lg text-label-lg text-secondary hover:text-primary transition-colors" href="#">
+          Become a Vendor
+        </a>
+<a class="font-label-lg text-label-lg text-secondary hover:text-on-surface px-3 py-1.5 rounded-lg transition-colors border border-transparent hover:border-surface-container-highest" href="#">
+          Sign In
+        </a>
+<a class="font-label-lg text-label-lg bg-primary-container text-on-primary px-4 py-2 rounded-lg hover:bg-primary active:scale-[0.98] transition-all shadow-sm" href="#">
+          Register
+        </a>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-sm md:px-margin py-10 md:py-16 relative overflow-hidden">
+<!-- Subtle Architectural Grid Background Accent -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="w-full max-w-[480px] relative z-10">
+<!-- Primary Card Container -->
+<div class="bg-surface-container-lowest border border-surface-container-highest rounded-xl shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] p-6 md:p-8">
+<!-- Modern Circular Icon Container -->
+<div class="flex justify-center mb-6">
+<div class="relative">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/60 flex items-center justify-center border border-primary-fixed-dim/40 text-primary-container">
+<span class="material-symbols-outlined text-[32px]" data-icon="lock_reset" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock_reset</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest border border-surface-container-highest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="key">key</span>
+</div>
+</div>
+</div>
+<!-- Headings & Helper Text -->
+<div class="text-center mb-6">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-2">Lupa Kata Sandi?</h1>
+<p class="font-body-md text-body-md text-secondary max-w-sm mx-auto">
+            Jangan khawatir! Masukkan alamat email yang terdaftar pada akun Anda. Kami akan mengirimkan tautan verifikasi atau kode OTP untuk mengatur ulang kata sandi Anda.
+          </p>
+</div>
+<!-- Form Elements -->
+<form class="space-y-5" id="reset-form" onsubmit="event.preventDefault(); showSuccessState();">
+<!-- Input Field: Alamat Email Terdaftar -->
+<div class="space-y-1.5 text-left">
+<label class="block font-label-lg text-label-lg text-on-surface" for="email-input">
+              Alamat Email Terdaftar
+            </label>
+<div class="relative rounded-lg shadow-xs">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-surface-container-highest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-tertiary focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-colors" id="email-input" placeholder="contoh: budi@domain.com" required="" type="email"/>
+</div>
+<!-- Help Note -->
+<div class="flex items-start gap-2 pt-1 text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm leading-tight text-tertiary">
+                Pastikan email aktif dan periksa folder spam jika tautan belum masuk dalam 2 menit.
+              </p>
+</div>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg py-3 px-4 rounded-lg shadow-sm active:scale-[0.99] transition-all flex items-center justify-center gap-2 group cursor-pointer" type="submit">
+<span>Kirim Tautan Reset</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform" data-icon="send">send</span>
+</button>
+</form>
+<!-- Dynamic Success Toast/Notice (Hidden initially) -->
+<div class="hidden mt-4 p-3.5 bg-surface-container-low border border-primary-fixed rounded-lg text-left" id="success-notice">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Tautan Terkirim!</p>
+<p class="font-body-sm text-body-sm text-secondary">Silakan periksa kotak masuk email Anda sekarang.</p>
+</div>
+</div>
+</div>
+<!-- Separator -->
+<div class="relative my-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-container-highest"></div>
+</div>
+<div class="relative flex justify-center text-xs">
+<span class="bg-surface-container-lowest px-3 font-label-sm text-label-sm text-tertiary">atau</span>
+</div>
+</div>
+<!-- Secondary Action: Back to Login -->
+<div class="text-center">
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform" data-icon="arrow_back">arrow_back</span>
+<span>Kembali ke Halaman Masuk</span>
+</a>
+</div>
+</div>
+<!-- Security & Support Info Badge -->
+<div class="mt-6 bg-surface-container-low/80 border border-surface-container-highest rounded-xl p-3.5 flex items-center justify-between gap-3 text-left">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Butuh bantuan lain?</p>
+<p class="font-body-sm text-body-sm text-secondary">Hubungi Tim Dukungan Pelanggan 24/7</p>
+</div>
+</div>
+<a class="shrink-0 font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+<span>Live Chat</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+</a>
+</div>
+<!-- Verified Trust Pill -->
+<div class="mt-4 flex items-center justify-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest border border-surface-container-highest text-secondary font-label-sm text-label-sm shadow-2xs">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="verified_user">verified_user</span>
+<span>Protokol Enkripsi TLS 256-bit Terverifikasi</span>
+</span>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Source) -->
+<footer class="w-full bg-surface-container-low border-t border-surface-container-highest/80 mt-auto">
+<div class="w-full max-w-[1440px] mx-auto py-space-lg px-gutter md:px-margin-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">MarketPlace</span>
+<span class="hidden sm:inline text-surface-dim">•</span>
+<p class="font-body-sm text-body-sm text-tertiary">
+          © 2024 MarketPlace Inc. All rights reserved. Architectural commerce for independent vendors.
+        </p>
+</div>
+<!-- Essential Links -->
+<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+<a class="font-label-md text-label-md text-tertiary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-tertiary hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-tertiary hover:text-primary transition-colors" href="#">Merchant Agreement</a>
+<a class="font-label-md text-label-md text-tertiary hover:text-primary transition-colors" href="#">Security</a>
+<a class="font-label-md text-label-md text-tertiary hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+<!-- Simple Interaction Logic -->
+<script>
+    function showSuccessState() {
+      const emailInput = document.getElementById('email-input');
+      const successNotice = document.getElementById('success-notice');
+      if (emailInput && emailInput.value) {
+        successNotice.classList.remove('hidden');
+      }
+    }
+  </script>
+</body></html>

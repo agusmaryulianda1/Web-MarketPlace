@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MarketPlace Portal - Profil &amp; Pengaturan Toko</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-highest": "#e0e3e5",
+            "on-surface": "#191c1e",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#582200",
+            "surface-container-high": "#e6e8ea",
+            "secondary-container": "#dae2fd",
+            "surface": "#f7f9fb",
+            "outline-variant": "#e0c0b1",
+            "background": "#f7f9fb",
+            "secondary-fixed-dim": "#bec6e0",
+            "primary": "#9d4300",
+            "primary-fixed": "#ffdbca",
+            "outline": "#8c7164",
+            "surface-container-low": "#f2f4f6",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#ffb690",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary": "#505f76",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#38485d",
+            "surface-container": "#eceef0",
+            "surface-bright": "#f7f9fb",
+            "primary-container": "#f97316",
+            "secondary": "#565e74",
+            "tertiary-container": "#8c9cb4",
+            "on-tertiary-fixed": "#0b1c30",
+            "on-background": "#191c1e",
+            "on-primary-fixed-variant": "#783200",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#dae2fd",
+            "on-secondary-container": "#5c647a",
+            "error": "#ba1a1a",
+            "surface-tint": "#9d4300",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#243348",
+            "tertiary-fixed": "#d3e4fe",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2d3133",
+            "on-primary-fixed": "#341100",
+            "inverse-on-surface": "#eff1f3",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "on-surface-variant": "#584237",
+            "surface-dim": "#d8dadc",
+            "inverse-primary": "#ffb690"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-sm": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter-lg": "2rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "3rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex">
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: SideNavBar (Target Destination: Toko [ACTIVE])        -->
+<!-- ========================================================================= -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 z-40 bg-surface-container-lowest dark:bg-surface-container border-r border-surface-variant dark:border-outline-variant shadow-sm dark:shadow-none">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Nav Top Cluster -->
+<div class="space-y-6">
+<!-- Brand Header Logo -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="storefront">storefront</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight block leading-tight">MarketPlace Portal</span>
+<span class="font-body-sm text-body-sm text-secondary">Seller &amp; Admin Central</span>
+</div>
+</div>
+<!-- Navigation Tabs: Autonomously maps active to 'Toko' -->
+<nav class="space-y-1">
+<!-- Tab 1: Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface dark:text-on-surface-variant dark:hover:text-inverse-on-surface font-label-lg text-label-lg transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-high active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Tab 2: Produk -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface dark:text-on-surface-variant dark:hover:text-inverse-on-surface font-label-lg text-label-lg transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-high active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Produk</span>
+</a>
+<!-- Tab 3: Pesanan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface dark:text-on-surface-variant dark:hover:text-inverse-on-surface font-label-lg text-label-lg transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-high active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Pesanan</span>
+</a>
+<!-- Tab 4: Toko (ACTIVE MATCH) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container/10 text-primary dark:text-primary-fixed font-label-lg text-label-lg font-semibold border-r-2 border-primary active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="storefront" data-weight="fill" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span>Toko</span>
+</a>
+<!-- Tab 5: Pengaturan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary hover:text-on-surface dark:text-on-surface-variant dark:hover:text-inverse-on-surface font-label-lg text-label-lg transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-high active:scale-[0.98] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</a>
+</nav>
+</div>
+<!-- Nav Bottom Cluster & Action -->
+<div class="space-y-4 pt-4 border-t border-surface-variant dark:border-outline-variant">
+<!-- Store Switcher Mini-Badge -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-semibold font-label-md text-label-md flex-shrink-0">
+              AT
+            </div>
+<div class="truncate">
+<p class="font-label-md text-label-md text-on-surface truncate">AudioTech Store</p>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> Terverifikasi
+              </span>
+</div>
+</div>
+<button class="text-secondary hover:text-on-surface" title="Buka Toko">
+<span class="material-symbols-outlined text-lg" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<!-- Footer Links: Bantuan & Keluar -->
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-on-surface dark:text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Bantuan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-error dark:text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN WRAPPER: Responsive Canvas with Sticky Top Navigation               -->
+<!-- ========================================================================= -->
+<div class="flex-1 ml-72 min-h-screen flex flex-col bg-background">
+<!-- SHARED COMPONENT: TopNavBar -->
+<header class="docked full-width top sticky top-0 z-30 bg-surface-container-lowest dark:bg-surface-container border-b border-surface-variant dark:border-outline-variant shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<!-- Left: Page Title Context -->
+<div class="flex items-center gap-4">
+<h1 class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-inverse-on-surface">
+            Profil &amp; Pengaturan Toko
+          </h1>
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-emerald-700">Toko Online</span>
+</div>
+</div>
+<!-- Right: Actions & Seller Profile -->
+<div class="flex items-center gap-3">
+<!-- Action Buttons -->
+<button class="p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors relative" title="Notifikasi">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary-container rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<button class="p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Pengaturan Tampilan">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<div class="h-6 w-px bg-surface-variant mx-1"></div>
+<!-- User Profile Avatar Pill -->
+<div class="flex items-center gap-3 pl-1">
+<div class="text-right hidden md:block">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">AudioTech Official Store</p>
+<p class="font-body-sm text-body-sm text-secondary">Merchant Super Admin</p>
+</div>
+<img class="w-9 h-9 rounded-full object-cover ring-1 ring-surface-variant" data-alt="Modern professional headshot of an Asian e-commerce store manager in a clean minimalist design studio wearing a slate grey collar shirt with soft natural lighting, framed cleanly in a circle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXv2AHsBuhcMwBdWRrKVpBAx6zdMIV7hZ7VultpQgOL2BWUBKfaMTYQgZH0elo-vM1FZGHmF3sZs6G41YZ-IQCGd0SX1kh3WBXNEkUYSASpbkptVvlQvWEUrg0JUFHtrvl21MuRQmy8eCVSwS9_YmZKIWGNLxdQmRGnm_gAoqDCZADhqCNtiMiN6lGFPGM4pYNbs3nTNM0MDfVXYpy91IJ5imlqFcq--gZPw6GDuiengJT6icMSjGw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-6 md:p-8 max-w-[1400px] w-full mx-auto space-y-8">
+<!-- ========================================================================= -->
+<!-- SECTION 1: Page Header with Global Call to Actions                        -->
+<!-- ========================================================================= -->
+<section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-surface-variant">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Profil &amp; Identitas Toko</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Kelola informasi etalase toko yang dilihat langsung oleh pelanggan setia Anda di MarketPlace.</p>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-surface-variant text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+            Lihat Toko Publik
+          </a>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container text-white hover:bg-orange-600 font-label-lg text-label-lg font-semibold shadow-sm transition-all active:scale-[0.98]" id="saveButton" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="save">save</span>
+            Simpan Perubahan
+          </button>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 2: Banner & Brand Header Toko (Hero Aesthetic Container)          -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden">
+<!-- Store Banner Cover Area -->
+<div class="relative h-48 sm:h-64 w-full bg-surface-container-low group">
+<img class="w-full h-full object-cover" data-alt="Panoramic modern minimal audio equipment showroom banner featuring high-end studio headphones, sleek aluminum sound bars, and subtle warm orange ambient lighting accents on polished slate gray concrete display surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0aDGjQYWUaJiwuMR5eiTXTofd150HTEBEr1v_CaL4FJd8F4kOXMoBzHM8Gdgh79k0Aqlg5m9zaRKPZfgA669V2577v7kd-v6sp2_laver9goxVxWqDVjR3VzQdzGeDu6FuBlwe2BxXhnLnFzPZan9PnxbDKLXdYE-gki-s1NkO16PrrCM0GexzB6zv1WtBYjgQHPw5g6nh1cm8oWxMLZ9TisWS6OXxZJ15LyhebDXMoMiKUPpXZaV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+<!-- Banner Upload / Change Action -->
+<div class="absolute top-4 right-4">
+<label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-lowest/90 backdrop-blur-sm hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="photo_camera">photo_camera</span>
+              Ubah Banner Toko
+              <input class="hidden" type="file"/>
+</label>
+</div>
+<!-- Banner Recommendations Prompt -->
+<div class="absolute bottom-3 right-4 text-xs text-white/80 font-body-sm hidden sm:block">
+            Rekomendasi rasio 16:5 • Maksimal ukuran 3MB (JPG, PNG)
+          </div>
+</div>
+<!-- Store Identity Bar (Logo Overlap + Vitals) -->
+<div class="px-6 pb-6 pt-0 relative flex flex-col md:flex-row md:items-end justify-between gap-6 -mt-12">
+<div class="flex flex-col sm:flex-row items-start sm:items-end gap-5">
+<!-- Brand Avatar / Logo -->
+<div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-surface-container-lowest p-1.5 shadow-md border border-surface-variant flex-shrink-0">
+<div class="w-full h-full rounded-xl bg-slate-900 flex items-center justify-center text-primary-container relative overflow-hidden">
+<span class="material-symbols-outlined text-5xl" data-icon="headphones">headphones</span>
+<!-- Change Logo Badge -->
+<button class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 flex items-center justify-center text-white transition-opacity" title="Ganti Logo Toko">
+<span class="material-symbols-outlined text-xl" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<!-- Identity Vitals -->
+<div class="space-y-1.5 pt-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<h3 class="font-headline-md text-headline-md text-on-surface">AudioTech Official Store</h3>
+<!-- Verified Official Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low border border-surface-variant text-slate-700 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-emerald-600" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+                  Official Store
+                </span>
+</div>
+<!-- Metrics Ribbon -->
+<div class="flex flex-wrap items-center gap-4 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-amber-500 text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.9 <span class="text-secondary font-normal">(1.4k ulasan pembeli)</span>
+</span>
+<span class="text-surface-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="calendar_month">calendar_month</span>
+                  Bergabung sejak Januari 2023
+                </span>
+<span class="text-surface-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="inventory_2">inventory_2</span>
+                  84 Produk Aktif
+                </span>
+</div>
+</div>
+</div>
+<!-- Store Status Quick Pill -->
+<div class="flex items-center gap-3 self-stretch sm:self-auto justify-end">
+<div class="bg-surface-container-low px-4 py-2.5 rounded-lg border border-surface-variant flex items-center gap-3">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Status Operasional Toko</p>
+<p class="font-label-lg text-label-lg font-semibold text-emerald-700 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Menerima Pesanan
+                </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer ml-2">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 3: Main Configuration 2-Column Bento Form Layout                  -->
+<!-- ========================================================================= -->
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-8" id="storeProfileForm" onsubmit="event.preventDefault();">
+<!-- ======================= -->
+<!-- KOLOM KIRI (7 Cols)     -->
+<!-- Informasi Dasar Toko    -->
+<!-- ======================= -->
+<div class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm space-y-6">
+<div class="border-b border-surface-variant pb-4 flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Informasi Dasar Toko</h3>
+<p class="font-body-sm text-body-sm text-secondary">Atribut merek dan kontak komunikasi pelanggan Anda.</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="badge">badge</span>
+</div>
+<div class="space-y-4">
+<!-- Field: Nama Toko -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storeName">
+                  Nama Toko <span class="text-primary-container">*</span>
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="storefront">storefront</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="storeName" type="text" value="AudioTech Official Store"/>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Nama ini digunakan pada faktur, nota pengiriman, dan pencarian marketplace.</p>
+</div>
+<!-- Field: URL / Domain Toko -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storeSlug">
+                  Domain / URL Toko <span class="text-primary-container">*</span>
+</label>
+<div class="flex rounded-lg shadow-sm border border-surface-variant overflow-hidden focus-within:border-primary-container focus-within:ring-1 focus-within:ring-primary-container bg-surface-container-lowest">
+<span class="inline-flex items-center px-3.5 bg-surface-container-low text-secondary border-r border-surface-variant font-body-sm text-body-sm select-none">
+                    marketplace.com/
+                  </span>
+<input class="flex-1 px-3.5 py-2.5 border-0 focus:ring-0 font-body-md text-body-md text-on-surface bg-transparent" id="storeSlug" type="text" value="audiotech-official"/>
+<button class="px-3 text-secondary hover:text-on-surface" title="Salin Tautan" type="button">
+<span class="material-symbols-outlined text-base" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Field: Deskripsi Toko -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storeDescription">
+                  Deskripsi Toko
+                </label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors leading-relaxed" id="storeDescription" rows="4">Toko resmi distributor peralatan audio premium, headphones studio, mikrofon, dan sound system berkualitas tinggi di Indonesia. Jaminan 100% original dan garansi resmi.</textarea>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-secondary mt-1">
+<span>Tuliskan ringkasan etalase toko secara persuasif untuk calon pembeli.</span>
+<span>184/500</span>
+</div>
+</div>
+<!-- Field Group: Kontak Layanan Toko -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<!-- WhatsApp -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storePhone">
+                    Nomor WhatsApp Layanan <span class="text-primary-container">*</span>
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="phone">phone</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="storePhone" type="text" value="+62 812 3456 7890"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storeEmail">
+                    Email Bisnis <span class="text-primary-container">*</span>
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="storeEmail" type="email" value="support@audiotech.id"/>
+</div>
+</div>
+</div>
+<!-- Social Media Handle Badges -->
+<div class="pt-3 border-t border-surface-variant flex flex-wrap gap-2 items-center">
+<span class="font-label-sm text-label-sm text-secondary">Media Sosial Terhubung:</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-surface-variant font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> @audiotech.id (Instagram)
+                </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-surface-variant font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> AudioTech ID (YouTube)
+                </span>
+</div>
+</div>
+</div>
+<!-- Section: Legalitas & Status Verifikasi Merchant -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="verified_user">verified_user</span>
+</div>
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Status Merchant: Terverifikasi Resmi</h4>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">VALID</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+                  Dokumen legalitas perusahaan (SIUP, NIB &amp; Rekening Giro atas nama <strong>PT Audio Teknologi Mandiri</strong>) telah divalidasi oleh tim Compliance MarketPlace.
+                </p>
+<div class="pt-2 flex items-center gap-4 text-body-sm font-body-sm text-slate-600">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-emerald-600" data-icon="check_circle">check_circle</span> NIB: 9120003841921</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-emerald-600" data-icon="check_circle">check_circle</span> Pajak: Terdaftar PKP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ======================= -->
+<!-- KOLOM KANAN (5 Cols)    -->
+<!-- Lokasi, Logistik & Jam  -->
+<!-- ======================= -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Card: Asal Pengiriman & Alamat Gudang -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm space-y-5">
+<div class="border-b border-surface-variant pb-4 flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Lokasi Gudang &amp; Pengiriman</h3>
+<p class="font-body-sm text-body-sm text-secondary">Penentuan tarif ongkos kirim otomatis.</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping">local_shipping</span>
+</div>
+<!-- Field: Alamat Asal Pengiriman -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="warehouseAddress">
+                Alamat Toko / Gudang Pusat <span class="text-primary-container">*</span>
+</label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="warehouseAddress" rows="3">Rukan Grand Permata Blok B No. 12, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12140</textarea>
+<div class="flex items-center justify-between mt-1 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-emerald-700">
+<span class="material-symbols-outlined text-sm" data-icon="pin_drop">pin_drop</span> Titik Pinpoint Akurat
+                </span>
+<button class="text-primary font-semibold hover:underline" type="button">Ubah Pin Lokasi</button>
+</div>
+</div>
+<!-- Kurir yang Didukung (Interaktif Checkbox) -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-2">
+                Pilihan Kurir yang Didukung Toko
+              </label>
+<div class="space-y-2.5">
+<!-- Kurir 1: JNE -->
+<label class="flex items-center justify-between p-3 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-slate-300 rounded focus:ring-primary-container" type="checkbox"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">JNE Express</p>
+<p class="font-body-sm text-body-sm text-secondary">Reguler, YES (Yakin Esok Sampai), JTR Trucking</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Aktif</span>
+</label>
+<!-- Kurir 2: SiCepat -->
+<label class="flex items-center justify-between p-3 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-slate-300 rounded focus:ring-primary-container" type="checkbox"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">SiCepat Ekspres</p>
+<p class="font-body-sm text-body-sm text-secondary">SiUntung, BEST, Cargo Kilat</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Aktif</span>
+</label>
+<!-- Kurir 3: GoSend Instant -->
+<label class="flex items-center justify-between p-3 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-slate-300 rounded focus:ring-primary-container" type="checkbox"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">GoSend Instant &amp; Same Day</p>
+<p class="font-body-sm text-body-sm text-secondary">Pengiriman kilat kurir roda dua Jabodetabek</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Aktif</span>
+</label>
+<!-- Kurir 4: GrabExpress -->
+<label class="flex items-center justify-between p-3 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-slate-300 rounded focus:ring-primary-container" type="checkbox"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">GrabExpress Instant</p>
+<p class="font-body-sm text-body-sm text-secondary">Layanan jemput kirim instan hari ini</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Aktif</span>
+</label>
+<!-- Kurir 5: Anteraja -->
+<label class="flex items-center justify-between p-3 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-primary-container border-slate-300 rounded focus:ring-primary-container" type="checkbox"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Anteraja</p>
+<p class="font-body-sm text-body-sm text-secondary">Reguler &amp; Next Day Delivery</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded border border-surface-variant">Non-aktif</span>
+</label>
+</div>
+</div>
+<!-- Jam Operasional Toko -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="storeHours">
+                Jam Operasional Toko
+              </label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="storeHours" type="text" value="Senin - Sabtu (08:00 - 17:00 WIB)"/>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Pesanan di luar jam operasional diproses di hari kerja berikutnya.</p>
+</div>
+<!-- Kebijakan Pengembalian Produk Ringkas -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1.5" for="returnPolicy">
+                Kebijakan Garansi &amp; Pengembalian
+              </label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface bg-surface-container-lowest transition-colors" id="returnPolicy" rows="3">Garansi resmi 12 bulan tukar baru untuk cacat pabrik. Syarat retur wajib menyertakan video unboxing utuh tanpa jeda dalam 2x24 jam sejak pesanan diterima.</textarea>
+</div>
+</div>
+<!-- Quick Tip Card -->
+<div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-4 flex gap-3 text-amber-900">
+<span class="material-symbols-outlined text-amber-600 flex-shrink-0" data-icon="lightbulb">lightbulb</span>
+<div class="font-body-sm text-body-sm leading-relaxed">
+<span class="font-semibold block font-label-md text-label-md">Tips Toko Resmi</span>
+              Menjaga akurasi jam operasional dan titik penjemputan gudang meningkatkan skor kepuasan toko hingga 28% menurut algoritma pencarian MarketPlace.
+            </div>
+</div>
+</div>
+</form>
+</main>
+<!-- Footer Copyright Watermark -->
+<footer class="mt-auto px-8 py-5 border-t border-surface-variant bg-surface-container-lowest text-secondary text-center font-body-sm text-body-sm">
+      © 2024 MarketPlace Seller Portal. Seluruh hak cipta dilindungi undang-undang.
+    </footer>
+</div>
+<!-- Micro-interaction Script for Saving Feedback -->
+<script>
+    document.getElementById('saveButton')?.addEventListener('click', function() {
+      const btn = this;
+      const originalText = btn.innerHTML;
+      
+      btn.innerHTML = `<span class="material-symbols-outlined text-lg animate-spin" data-icon="sync">sync</span> Menyimpan...`;
+      btn.classList.add('opacity-80', 'cursor-not-allowed');
+
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-lg" data-icon="check">check</span> Tersimpan!`;
+        btn.classList.remove('bg-primary-container', 'opacity-80');
+        btn.classList.add('bg-emerald-600');
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-emerald-600', 'cursor-not-allowed');
+          btn.classList.add('bg-primary-container');
+        }, 2200);
+      }, 700);
+    });
+  </script>
+</body></html>

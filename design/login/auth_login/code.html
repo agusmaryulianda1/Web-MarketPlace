@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Masuk ke Akun Anda - MarketPlace</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container-Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Configuration as Mandated -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#9d4300",
+            "background": "#f7f9fb",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "tertiary-container": "#8c9cb4",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed": "#dae2fd",
+            "on-secondary-container": "#5c647a",
+            "surface-bright": "#f7f9fb",
+            "surface-container": "#eceef0",
+            "tertiary": "#505f76",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#38485d",
+            "on-surface-variant": "#584237",
+            "outline": "#8c7164",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "inverse-on-surface": "#eff1f3",
+            "outline-variant": "#e0c0b1",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#341100",
+            "surface-container-low": "#f2f4f6",
+            "primary-fixed-dim": "#ffb690",
+            "secondary": "#565e74",
+            "surface-container-highest": "#e0e3e5",
+            "primary-fixed": "#ffdbca",
+            "on-surface": "#191c1e",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#0b1c30",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#783200",
+            "surface-dim": "#d8dadc",
+            "surface-tint": "#9d4300",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-container": "#582200",
+            "primary-container": "#f97316",
+            "on-background": "#191c1e",
+            "secondary-fixed-dim": "#bec6e0",
+            "inverse-primary": "#ffb690",
+            "on-tertiary-container": "#243348",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed": "#d3e4fe",
+            "surface-variant": "#e0e3e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "1rem",
+            "margin-lg": "3rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-xl": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-container-low text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-surface-container-lowest antialiased">
+<!-- Top Minimalist Navigation Bar (Linear/Auth flow optimized, derived from TopNavBar tokens) -->
+<header class="w-full bg-surface-container-lowest shadow-sm border-b border-surface-container-highest">
+<div class="max-w-[1440px] mx-auto px-gutter md:px-margin-lg h-16 flex items-center justify-between">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-space-sm group" href="#">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-surface-container-lowest shadow-sm group-hover:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div class="flex flex-col leading-none">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">Market<span class="text-primary-container">Place</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide">ARCHITECTURAL COMMERCE</span>
+</div>
+</a>
+<!-- Right Link Cluster -->
+<div class="flex items-center gap-space-md">
+<span class="hidden sm:inline font-body-md text-body-md text-secondary">Belum punya akun?</span>
+<a class="inline-flex items-center justify-center font-label-lg text-label-lg text-primary-container border border-primary-container hover:bg-primary-container hover:text-surface-container-lowest px-space-md py-space-xs rounded-lg transition-all duration-150 active:scale-[0.98]" href="#">
+          Daftar Sekarang
+        </a>
+</div>
+</div>
+</header>
+<!-- Main Centered Authentication Canvas -->
+<main class="flex-grow flex items-center justify-center px-gutter-sm sm:px-gutter py-space-xl">
+<div class="w-full max-w-[480px]">
+<!-- Auth Card Component -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm p-6 sm:p-8 relative">
+<!-- Header Section -->
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-fixed mb-3 text-primary">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-2">
+            Masuk ke Akun Anda
+          </h1>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            Selamat datang kembali! Masuk untuk mulai berbelanja atau kelola toko Anda.
+          </p>
+</div>
+<!-- Role Switcher Toggle Pill -->
+<div class="bg-surface-container-low p-1 rounded-lg flex items-center justify-between mb-6 border border-surface-container-high" role="tablist">
+<button aria-selected="true" class="flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm" id="tab-buyer" onclick="selectRole('buyer')" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+            Sebagai Pembeli
+          </button>
+<button aria-selected="false" class="flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150 flex items-center justify-center gap-1.5" id="tab-vendor" onclick="selectRole('vendor')" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="store">store</span>
+            Sebagai Penjual
+          </button>
+</div>
+<!-- Role Helper Badge Notification -->
+<div class="hidden mb-5 p-2.5 rounded-lg bg-secondary-fixed border border-secondary-container flex items-center gap-2 text-on-secondary-container" id="role-badge-info">
+<span class="material-symbols-outlined text-[18px] text-primary-container" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm leading-tight">Portal Merchant Vendor: Akses dasbor toko, analitik penjualan, dan katalog produk.</span>
+</div>
+<!-- Form Elements -->
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Field: Email or Phone -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-medium mb-1.5" for="identifier">
+              Email atau Nomor Ponsel
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none" data-icon="alternate_email">alternate_email</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-10 pr-3.5 py-2.5 rounded-lg border border-surface-container-highest focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container placeholder:text-tertiary-container transition-colors" id="identifier" placeholder="nama@email.com atau 0812xxxx" required="" type="text"/>
+</div>
+</div>
+<!-- Field: Password -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-label-lg text-label-lg text-on-surface font-medium" for="password">
+                Kata Sandi
+              </label>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none" data-icon="key">key</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-10 pr-10 py-2.5 rounded-lg border border-surface-container-highest focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container placeholder:text-tertiary-container transition-colors" id="password" placeholder="Masukkan kata sandi akun" required="" type="password"/>
+<button class="absolute right-3 text-secondary hover:text-on-surface focus:outline-none flex items-center justify-center p-0.5" onclick="togglePasswordVisibility()" title="Tampilkan / Sembunyikan Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Helper Options: Remember Me & Forgot Password -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input class="rounded w-4 h-4 text-primary-container border-surface-container-highest focus:ring-primary-container transition-colors" id="remember-me" type="checkbox"/>
+<span class="font-body-md text-body-md text-secondary">Ingat Saya</span>
+</label>
+<a class="font-label-md text-label-md text-primary-container hover:underline hover:text-primary font-semibold transition-colors" href="#">
+              Lupa Kata Sandi?
+            </a>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full bg-primary-container hover:bg-primary text-surface-container-lowest font-headline-sm text-headline-sm py-3 px-4 rounded-lg shadow-sm transition-all duration-150 active:scale-[0.99] flex items-center justify-center gap-2 mt-2 font-bold cursor-pointer" type="submit">
+<span>Masuk ke Akun</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-6 flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-container-highest"></div>
+</div>
+<span class="relative bg-surface-container-lowest px-3 font-body-sm text-body-sm text-secondary uppercase tracking-wider">
+            atau masuk dengan
+          </span>
+</div>
+<!-- Social Authentication Buttons -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Google Social Button -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border border-surface-container-highest bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M12 5c1.54 0 2.92.54 4.02 1.43l3.01-3.01C17.21 1.7 14.77 1 12 1 7.42 1 3.53 3.61 1.67 7.41l3.66 2.84C6.22 7.28 8.87 5 12 5z" fill="#EA4335"></path>
+<path d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58l3.7 2.87c2.16-2 3.72-4.94 3.72-8.69z" fill="#4285F4"></path>
+<path d="M5.33 14.75c-.24-.71-.38-1.47-.38-2.25s.14-1.54.38-2.25L1.67 7.41C.61 9.53 0 11.9 0 14.5s.61 4.97 1.67 7.09l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 23.5c3.24 0 5.95-1.08 7.93-2.91l-3.7-2.87c-1.08.72-2.45 1.16-4.23 1.16-3.13 0-5.78-2.28-6.67-5.25L1.67 16.47C3.53 20.27 7.42 23.5 12 23.5z" fill="#34A853"></path>
+</svg>
+<span class="font-label-md text-label-md text-on-surface font-medium">Google</span>
+</button>
+<!-- Apple Social Button -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border border-surface-container-highest bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150 active:scale-[0.98]" type="button">
+<svg class="w-4 h-4 fill-current text-on-surface" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.65-.79 1.1-1.89.98-2.99-.95.04-2.1.63-2.77 1.42-.59.68-1.11 1.79-.97 2.86 1.06.08 2.14-.53 2.76-1.29z"></path>
+</svg>
+<span class="font-label-md text-label-md text-on-surface font-medium">Apple</span>
+</button>
+</div>
+<!-- Security Reassurance Notice -->
+<div class="mt-6 pt-4 border-t border-surface-container-highest flex items-center justify-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="shield">shield</span>
+<span class="font-body-sm text-body-sm text-center">
+            Dilindungi enkripsi data 256-bit standar industri.
+          </span>
+</div>
+</div>
+</div>
+</main>
+<!-- Clean Minimal Footer in Indonesian -->
+<footer class="w-full bg-surface-container-low border-t border-surface-container-highest py-6">
+<div class="max-w-[1440px] mx-auto px-gutter md:px-margin-lg flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<!-- Copyright text -->
+<div class="font-body-sm text-body-sm text-secondary">
+        © 2024 MarketPlace Inc. Hak cipta dilindungi. Architectural commerce for independent vendors.
+      </div>
+<!-- Legal Links -->
+<div class="flex flex-wrap items-center justify-center gap-space-md font-label-md text-label-md text-tertiary">
+<a class="hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<span class="text-surface-dim">•</span>
+<a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a>
+<span class="text-surface-dim">•</span>
+<a class="hover:text-primary transition-colors" href="#">Perjanjian Penjual</a>
+<span class="text-surface-dim">•</span>
+<a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a>
+</div>
+</div>
+</footer>
+<!-- Light Vanilla Script for Interactivity -->
+<script>
+    function selectRole(role) {
+      const buyerBtn = document.getElementById('tab-buyer');
+      const vendorBtn = document.getElementById('tab-vendor');
+      const infoBadge = document.getElementById('role-badge-info');
+
+      if (role === 'buyer') {
+        buyerBtn.className = 'flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm';
+        buyerBtn.setAttribute('aria-selected', 'true');
+        
+        vendorBtn.className = 'flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150 flex items-center justify-center gap-1.5';
+        vendorBtn.setAttribute('aria-selected', 'false');
+        
+        infoBadge.classList.add('hidden');
+      } else {
+        vendorBtn.className = 'flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-sm';
+        vendorBtn.setAttribute('aria-selected', 'true');
+        
+        buyerBtn.className = 'flex-1 py-2 px-3 rounded-lg font-label-md text-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150 flex items-center justify-center gap-1.5';
+        buyerBtn.setAttribute('aria-selected', 'false');
+        
+        infoBadge.classList.remove('hidden');
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye-icon');
+      
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.textContent = 'visibility_off';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.textContent = 'visibility';
+      }
+    }
+  </script>
+</body></html>

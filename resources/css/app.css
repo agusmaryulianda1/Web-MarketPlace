@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+@import 'aos/dist/aos.css';
+
+/* Keep content visible until AOS has initialized successfully. */
+html:not(.aos-enabled) [data-aos][data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.aos-enabled [data-aos][data-aos],
+    html.aos-enabled [data-aos][data-aos].aos-animate {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@layer base {
+    button:not(:disabled),
+    a[href]:not([aria-disabled='true']),
+    select:not(:disabled),
+    [role='button']:not([aria-disabled='true']) {
+        cursor: pointer;
+    }
+}
+
+@theme {
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+    --color-primary: #9d4300;
+    --color-primary-container: #f97316;
+    --color-background: #f7f9fb;
+    --color-surface: #ffffff;
+    --color-surface-container: #eceef0;
+    --color-surface-container-low: #f2f4f6;
+    --color-surface-container-high: #e6e8ea;
+    --color-foreground: #191c1e;
+    --color-secondary: #565e74;
+    --color-error: #ba1a1a;
+}
+
+@page payment-receipt {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+    .payment-receipt {
+        page: payment-receipt;
+        background: #fff !important;
+        color: #191c1e !important;
+    }
+
+    .payment-receipt * {
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+
+    .payment-receipt__document,
+    .payment-receipt__section-card,
+    .payment-receipt__vendor-group {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .payment-receipt__metadata,
+    .payment-receipt__info,
+    .payment-receipt__total {
+        break-inside: avoid-page;
+    }
+
+    .payment-receipt__vendor-header {
+        break-inside: avoid-page;
+        break-after: avoid-page;
+    }
+
+    .payment-receipt__mobile-items {
+        display: none !important;
+    }
+
+    .payment-receipt__table-wrapper {
+        display: block !important;
+    }
+
+    .payment-receipt__table {
+        table-layout: auto !important;
+    }
+
+    .payment-receipt__table thead {
+        display: table-header-group;
+    }
+
+    .payment-receipt__table tr {
+        break-inside: avoid-page;
+    }
+
+    .payment-receipt__table th,
+    .payment-receipt__table td {
+        padding: 2mm !important;
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .payment-receipt .rounded-full {
+        background: transparent !important;
+        color: #191c1e !important;
+    }
+}
+
+@page vendor-order-note {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+    .vendor-order-note {
+        page: vendor-order-note;
+        background: #fff !important;
+        color: #191c1e !important;
+    }
+
+    .vendor-order-note * {
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+
+    .vendor-order-note__print-button,
+    .vendor-order-note__mobile-items {
+        display: none !important;
+    }
+
+    .vendor-order-note__document,
+    .vendor-order-note__metadata,
+    .vendor-order-note__shipping,
+    .vendor-order-note__items {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .vendor-order-note__metadata,
+    .vendor-order-note__shipping,
+    .vendor-order-note__subtotal {
+        break-inside: avoid-page;
+    }
+
+    .vendor-order-note__table-wrapper {
+        display: block !important;
+    }
+
+    .vendor-order-note__table {
+        table-layout: auto !important;
+    }
+
+    .vendor-order-note__table thead {
+        display: table-header-group;
+    }
+
+    .vendor-order-note__table tr {
+        break-inside: avoid-page;
+    }
+
+    .vendor-order-note__table th,
+    .vendor-order-note__table td {
+        padding: 2mm !important;
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .vendor-order-note .rounded-full {
+        background: transparent !important;
+        color: #191c1e !important;
+    }
+}
+
